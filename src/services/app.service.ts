@@ -13,22 +13,38 @@ export class AppService {
       });
     }
 
-    const response = await fetch(`${this.baseUrl}/${url}${criteria ? `?${query}` : ""}`);
+    const response = await fetch(
+      `${this.baseUrl}/${url}${criteria ? `?${query}` : ""}`
+    );
     return await response.json();
   }
 
   public async post<T>(url: string, model: any): Promise<T> {
-    const response = await fetch(`${this.baseUrl}/${url}`, { method: "POST", body: model });
+    const response = await fetch(`${this.baseUrl}/${url}`, 
+      { 
+        method: "POST", 
+        body: model, 
+      }
+    );
     return await response.json();
   }
 
   public async put<T>(url: string, model: any): Promise<T> {
-    const response = await fetch(`${this.baseUrl}/${url}`, { method: "PUT", body: model });
+    const response = await fetch(`${this.baseUrl}/${url}`, 
+      { 
+        method: "PUT", 
+        body: model, 
+      }
+    );
     return await response.json();
   }
 
   public async delete<T>(url: string): Promise<T> {
-    const response = await fetch(`${this.baseUrl}/${url}`, { method: "DELETE" });
+    const response = await fetch(`${this.baseUrl}/${url}`, 
+      { 
+        method: "DELETE", 
+      }
+    );
     return await response.json();
   }
 }
