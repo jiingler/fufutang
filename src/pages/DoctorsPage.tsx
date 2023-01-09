@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import ClinicSwitcher from '../components/ClinicSwitcher';
-import Doctor from '../components/Doctor';
-import PageTitle from '../components/PageTitle';
-import { AppService } from '../services/app.service';
+import * as React from "react";
+import { useEffect, useState } from "react";
+import ClinicSwitcher from "../components/ClinicSwitcher";
+import Doctor from "../components/Doctor";
+import PageTitle from "../components/PageTitle";
+import { AppService } from "../services/app.service";
 
 const DoctorsPage: React.FC<{}> = () => {
   // const [currentClinic, setCurrentClinic] = useState<Clinic>();
@@ -13,11 +13,11 @@ const DoctorsPage: React.FC<{}> = () => {
   const appService = new AppService();
 
   // const getAllClinics = async () => {
-  //   return await appService.get<Clinic[]>('Clinic', null);
+  //   return await appService.get<Clinic[]>("Clinic", null);
   // };
 
   const getAllDoctors = async () => {
-    return await appService.get<Doctor[]>('Doctor', null);
+    return await appService.get<Doctor[]>("Doctor", null);
   };
 
   useEffect(() => {
@@ -46,7 +46,8 @@ const DoctorsPage: React.FC<{}> = () => {
           </div>
         )}
       </div> */}
-      {doctors && doctors.map((doctor) => <Doctor key={doctor.id} doctor={doctor} />)}
+      {doctors &&
+        doctors.map((doctor) => <Doctor key={doctor.id} doctor={doctor} />)}
     </div>
   );
 };

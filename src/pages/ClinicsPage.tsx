@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import Clinic from '../components/Clinic';
-import ClinicSwitcher from '../components/ClinicSwitcher';
-import PageTitle from '../components/PageTitle';
-import { AppService } from '../services/app.service';
+import { useEffect, useState } from "react";
+import Clinic from "../components/Clinic";
+import ClinicSwitcher from "../components/ClinicSwitcher";
+import PageTitle from "../components/PageTitle";
+import { AppService } from "../services/app.service";
 
 const ClinicsPage = () => {
   const [clinics, setClinics] = useState<Clinic[]>([]);
@@ -11,7 +11,7 @@ const ClinicsPage = () => {
   const appService = new AppService();
 
   const getAllClinics = async () => {
-    return await appService.get<Clinic[]>('Clinic', null);
+    return await appService.get<Clinic[]>("Clinic", null);
   };
 
   useEffect(() => {

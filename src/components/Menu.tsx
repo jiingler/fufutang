@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import * as React from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 type MenuProps = {
   scrollY: number;
@@ -13,8 +13,8 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
 
   const onClick = () => {
     setShowMenu(!showMenu);
-    const root = document.querySelector('#root') as HTMLDivElement;
-    root.style.overflowY = showMenu ? 'auto' : 'hidden';
+    const root = document.querySelector("#root") as HTMLDivElement;
+    root.style.overflowY = showMenu ? "auto" : "hidden";
   };
 
   useEffect(() => {
@@ -24,9 +24,10 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
     <nav>
       <ul
         className={`menu d-md-flex d-none ${
-          scrollY <= 10 && location.pathname === '/' ? 'white' : 'black'
+          scrollY <= 10 && location.pathname === "/" ? "white" : "black"
         }
-          ${scrollY <= 10 ? 'hightBar' : 'lowBar'}`}>
+          ${scrollY <= 10 ? "hightBar" : "lowBar"}`}
+      >
         <li>
           <Link to="/news">最新消息</Link>
         </li>
@@ -43,19 +44,27 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
           <a>文章分享</a>
         </li>
       </ul>
-      <div className="hamburger d-md-none d-block position-absolute" onClick={onClick}>
+      <div
+        className="hamburger d-md-none d-block position-absolute"
+        onClick={onClick}
+      >
         {showMenu ? (
           <span className={`material-icons black`}>close</span>
         ) : (
           <span
             className={`material-icons ${
-              scrollY <= 10 && location.pathname === '/' ? 'white' : 'black'
-            }`}>
+              scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+            }`}
+          >
             menu
           </span>
         )}
       </div>
-      <div className={`phone-menu position-absolute ${showMenu ? 'show' : 'hide'} `}>
+      <div
+        className={`phone-menu position-absolute ${
+          showMenu ? "show" : "hide"
+        } `}
+      >
         <ul className="list">
           <li className="py-3">
             <Link to="/news">最新消息</Link>

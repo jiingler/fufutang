@@ -1,33 +1,33 @@
-import Notice from '../components/Notice';
-import PageTitle from '../components/PageTitle';
+import Notice from "../components/Notice";
+import PageTitle from "../components/PageTitle";
 
 const NewsPage = () => {
   const notices: News[] = [
     {
-      id: '001',
-      title: '福福堂慶開幕活動',
-      subTitle: '活動期間02/01 ~ 02/28',
-      clinicId: 'fufu',
-      imageUrl: '',
-      content: '',
-      regDate: '2022-12-24'
+      id: "001",
+      title: "福福堂慶開幕活動",
+      subTitle: "活動期間02/01 ~ 02/28",
+      clinicId: "fufu",
+      imageUrl: "",
+      content: "",
+      regDate: "2022-12-24",
     },
     {
-      id: '002',
-      title: '掛號須知',
-      clinicId: 'fufu',
-      imageUrl: '',
-      content: '',
-      regDate: '2022-12-24'
+      id: "002",
+      title: "掛號須知",
+      clinicId: "fufu",
+      imageUrl: "",
+      content: "",
+      regDate: "2022-12-24",
     },
     {
-      id: '003',
-      title: '自費門診掛號',
-      clinicId: 'fufu',
-      imageUrl: '',
-      content: '',
-      regDate: '2022-12-24'
-    }
+      id: "003",
+      title: "自費門診掛號",
+      clinicId: "fufu",
+      imageUrl: "",
+      content: "",
+      regDate: "2022-12-24",
+    },
   ];
 
   return (

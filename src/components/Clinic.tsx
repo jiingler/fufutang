@@ -1,6 +1,6 @@
-import * as React from 'react';
-import ClinicTime from './ClinicTime';
-import MediumTitle from './MediumTitle';
+import * as React from "react";
+import ClinicTime from "./ClinicTime";
+import MediumTitle from "./MediumTitle";
 
 type ClinicProps = {
   clinic: Clinic;
@@ -37,7 +37,8 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
               <a
                 href={`https://www.google.com/maps/place/${clinic?.address}`}
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 {clinic?.address}
               </a>
             </p>
@@ -50,8 +51,12 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
               遼寧街口(自立路)：28、53B、92自由幹線、301、301區間車、8043、9117、9117A、9127、9188、紅25公車式小黃繞十全路、紅30、紅31
             </p>
             <p className="mb-md-3 mb-2">停車資訊：</p>
-            <p className="mb-md-3 mb-2 ps-3">宏來商業大樓停車場（九如二路612巷）</p>
-            <p className="mb-md-3 mb-2 ps-3">城市車旅停車場（九如二路637巷29弄）</p>
+            <p className="mb-md-3 mb-2 ps-3">
+              宏來商業大樓停車場（九如二路612巷）
+            </p>
+            <p className="mb-md-3 mb-2 ps-3">
+              城市車旅停車場（九如二路637巷29弄）
+            </p>
           </div>
           <div className="googleMap">
             <iframe
@@ -61,7 +66,8 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
               style={{ border: 0 }}
               allowFullScreen={false}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"></iframe>
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const SectionTitle: React.FC<{ text: string }> = ({ text }) => {
   return (

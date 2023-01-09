@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { useState } from 'react';
-import Backdrop from './Backdrop';
-import logo from '../assets/logo/Fufutang-logo-pink-line-only-logo.svg';
+import * as React from "react";
+import { useState } from "react";
+import Backdrop from "./Backdrop";
+import logo from "../assets/logo/Fufutang-logo-pink-line-only-logo.svg";
 
 type ClinicSwitcherProps = {
   clinics: Clinic[];
@@ -14,7 +14,7 @@ const ClinicSwitcher: React.FC<ClinicSwitcherProps> = ({
   clinics,
   currentClinic,
   setCurrentClinic,
-  isPhoneModeSelect
+  isPhoneModeSelect,
 }) => {
   const [selectedClinic, setSelectedClinic] = useState(clinics[0]);
   const [isExpandOptions, setIsExpandOptions] = useState(false);
@@ -25,11 +25,16 @@ const ClinicSwitcher: React.FC<ClinicSwitcherProps> = ({
           const isActive = currentClinic?.id === clinic?.id;
           return (
             <div
-              className={`clinicSwitcher my-md-5 my-4 ${isActive ? 'active' : ''} ${
-                isPhoneModeSelect ? 'd-md-block d-none' : 'd-flex align-items-center flex-wrap'
+              className={`clinicSwitcher my-md-5 my-4 ${
+                isActive ? "active" : ""
+              } ${
+                isPhoneModeSelect
+                  ? "d-md-block d-none"
+                  : "d-flex align-items-center flex-wrap"
               }`}
               key={clinic.id}
-              onClick={() => setCurrentClinic(clinic)}>
+              onClick={() => setCurrentClinic(clinic)}
+            >
               <img className="logo me-3" src={logo} alt="logo" />
               {clinic.name}
             </div>
@@ -41,9 +46,12 @@ const ClinicSwitcher: React.FC<ClinicSwitcherProps> = ({
         <div className="w-100 d-md-none mx-3">
           <div
             className="clinicSwitcher selected"
-            onClick={() => setIsExpandOptions(!isExpandOptions)}>
+            onClick={() => setIsExpandOptions(!isExpandOptions)}
+          >
             <p>{selectedClinic.name}</p>
-            {clinics.length > 1 && <span className="material-icons">expand_more</span>}
+            {clinics.length > 1 && (
+              <span className="material-icons">expand_more</span>
+            )}
           </div>
           {isExpandOptions && (
             <>
@@ -57,7 +65,8 @@ const ClinicSwitcher: React.FC<ClinicSwitcherProps> = ({
                         setSelectedClinic(clinic);
                         setCurrentClinic(clinic);
                         setIsExpandOptions(false);
-                      }}>
+                      }}
+                    >
                       {clinic.name}
                     </div>
                   ))}

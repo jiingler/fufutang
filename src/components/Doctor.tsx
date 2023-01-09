@@ -1,5 +1,5 @@
-import * as React from 'react';
-import MediumTitle from './MediumTitle';
+import * as React from "react";
+import MediumTitle from "./MediumTitle";
 
 const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
   return (
@@ -13,7 +13,8 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
               ))}
             </div>
             <h3 className="doctor-name mb-2">
-              {doctor?.name} <span className="doctor-position">{doctor?.position}</span>
+              {doctor?.name}{" "}
+              <span className="doctor-position">{doctor?.position}</span>
             </h3>
           </div>
           <div className="profile-image">

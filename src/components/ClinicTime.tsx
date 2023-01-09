@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { ClinicType, ClinicTypeText } from '../models/ClinicType.enum';
-import { AppService } from '../services/app.service';
+import * as React from "react";
+import { useEffect, useState } from "react";
+import { ClinicType, ClinicTypeText } from "../models/ClinicType.enum";
+import { AppService } from "../services/app.service";
 
 type ClinicTimeProps = {
   clinicId: string;
@@ -65,13 +65,21 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                         {clinicDoctorList &&
                           clinicDoctorList?.map((clinicDoctor, j) => (
                             <a key={j}>
-                              <p className="doctorName mb-2">{clinicDoctor?.doctorName}</p>
+                              <p className="doctorName mb-2">
+                                {clinicDoctor?.doctorName}
+                              </p>
                               <p className="clinicType">
-                                {clinicDoctor?.clinicType === ClinicType.OwnExpense
-                                  ? `（${ClinicTypeText[ClinicType.OwnExpense]}）`
-                                  : clinicDoctor?.clinicType === ClinicType.TimeAdjust
-                                  ? `（${ClinicTypeText[ClinicType.TimeAdjust]}）`
-                                  : ''}
+                                {clinicDoctor?.clinicType ===
+                                ClinicType.OwnExpense
+                                  ? `（${
+                                      ClinicTypeText[ClinicType.OwnExpense]
+                                    }）`
+                                  : clinicDoctor?.clinicType ===
+                                    ClinicType.TimeAdjust
+                                  ? `（${
+                                      ClinicTypeText[ClinicType.TimeAdjust]
+                                    }）`
+                                  : ""}
                               </p>
                             </a>
                           ))}
