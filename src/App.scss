@@ -1,38 +1,40 @@
+@import "./style/reset";
+@import "./style/variables";
+@import "./style/basic";
+@import "./style/mixin";
+@import "./style/custom";
+@import "./style/components";
+@import "./style/pages";
+
+html,
+body,
+#root,
 .App {
-  text-align: center;
+  height: 100%;
+  font-family: custom-font-family;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  overflow-x: hidden;
+  height: unset;
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  // background-color: $fufu-quaternary;
+}
+
+.body {
+  padding-bottom: $footer-height;
+  @include md {
+    padding-bottom: $footer-md-height;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+a {
+  cursor: pointer;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: underline !important;
   }
 }

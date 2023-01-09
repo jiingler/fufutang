@@ -1,0 +1,135 @@
+.news {
+  // margin-top: -144px; // nav height
+  padding-top: 180px;
+  margin-bottom: 150px;
+  .container {
+    max-width: 1230px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @include xxl {
+      max-width: 1230px;
+    }
+    @include md {
+      max-width: 720px;
+    }
+    @include sm {
+      max-width: 540px;
+    }
+    .row {
+      @include md {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  .image-container {
+    margin-left: -100px;
+    margin-bottom: -40px;
+    text-align: right;
+    @include xxl {
+      margin-left: -50px;
+    }
+    @media screen and (max-width: 1320px) {
+      margin-left: 0px;
+    }
+    @include lg {
+      margin-top: 30px;
+    }
+    @include md {
+      margin-bottom: -40px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+    .img {
+      color: #fff;
+    }
+  }
+}
+
+.content {
+  height: 200px;
+}
+
+.article {
+  padding-bottom: 20px;
+  padding-left: 40px;
+
+  &-category {
+    font-size: 1.25rem;
+    position: relative;
+    color: $fufu-secondary;
+    &::before {
+      height: 1px;
+      width: 100%;
+      background: $fufu-secondary;
+      position: absolute;
+      left: 0;
+      content: "";
+      top: 12px;
+    }
+    span {
+      background-color: $fufu-quaternary;
+      display: inline-block;
+      padding: 0 8px 0 0;
+      position: relative;
+    }
+  }
+  &-inner-title {
+    padding-left: 25px;
+  }
+  &-title {
+    color: $fufu-secondary;
+    font-size: 2.5rem;
+    margin-right: 100px;
+    line-height: 1.3;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+  }
+  &-info {
+    font-size: 0.8rem;
+    bottom: 0px;
+    color: $gray-400;
+  }
+  @include xxl {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+  @media (max-width: 1320px) {
+    padding-top: 0;
+    padding-left: 20px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-top: 10px;
+    padding-left: 0;
+    &-title {
+      font-size: 1.75rem;
+    }
+  }
+  @include md {
+    padding-top: 0;
+    padding-left: 0;
+    &-container {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    &-category {
+      font-size: 1rem;
+      &::before {
+        top: 7px;
+      }
+    }
+    &-inner-wrap {
+      padding-left: 0;
+    }
+    &-title {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      margin-right: 50px;
+    }
+  }
+}

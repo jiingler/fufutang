@@ -1,0 +1,48 @@
+@mixin button($color) {
+  background-color: $color;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  .material-icons {
+    font-size: 1.5rem;
+    margin-right: 0.25rem;
+  }
+  @include md {
+    padding: 8px 16px;
+  }
+  &:hover {
+    background-color: darken($color, 8%);
+  }
+  &.outlined {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    &:hover {
+      background-color: white;
+      color: #3f4e4f;
+    }
+  }
+}
+
+.btn-primary {
+  @include button($fufu-primary);
+}
+
+.btn-secondary {
+  @include button($fufu-secondary);
+}
+
+.btn-tertiary {
+  @include button($fufu-tertiary);
+}
+
+.btn-quaternary {
+  @include button($fufu-quaternary);
+}

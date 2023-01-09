@@ -1,0 +1,7 @@
+@mixin generatorFontZise($infix: null) {
+  @each $size in map-keys($font-sizes) {
+    .fz-#{$infix}-#{$size} {
+      font-size: map-get($font-sizes, $size) !important;
+    }
+  }
+}

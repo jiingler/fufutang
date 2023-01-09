@@ -1,0 +1,122 @@
+.doctor {
+  .profile-image {
+    text-align: right;
+    max-height: 500px;
+    img {
+      height: 100%;
+    }
+    @include sm {
+      text-align: center;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .clinic {
+    color: $fufu-tertiary;
+    font-size: 1.25rem;
+    p {
+      padding: 0 8px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid $fufu-tertiary;
+      }
+    }
+    @include sm {
+      font-size: 1rem;
+    }
+  }
+  &-name {
+    font-size: 2rem;
+    font-weight: bold;
+    @include sm {
+      font-size: 1.8rem;
+    }
+  }
+  &-position {
+    font-size: 1.5rem;
+    font-weight: normal;
+    @include sm {
+      font-size: 1.2rem;
+    }
+  }
+  &-info {
+    background-color: $fufu-primary;
+    color: white;
+    .info {
+      padding: 1rem 3rem;
+      flex-grow: 1;
+      flex-basis: 33%;
+      &:not(:last-child) {
+        border-right: 1px solid white;
+      }
+    }
+    @include md {
+      .info {
+        text-align: center;
+        padding: 2rem 1rem;
+        &:not(:last-child) {
+          border-right: none;
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+    .class {
+      font-size: 1.2rem;
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 2rem;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        top: 30px;
+        background-color: $fufu-tertiary;
+      }
+      @include sm {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          top: 25px;
+          background-color: $fufu-tertiary;
+        }
+      }
+    }
+    .list {
+      text-align: left;
+    }
+    .item {
+      font-size: 0.9rem;
+      padding: 0.3rem 0;
+      line-height: 1.2;
+      font-weight: 300;
+    }
+  }
+  &-expertise {
+    .expertise {
+      border: 1px solid $gray-200;
+      padding: 1rem;
+      background-color: $fufu-quaternary;
+      height: 100%;
+      .title {
+        font-weight: 500;
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+      .description {
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}

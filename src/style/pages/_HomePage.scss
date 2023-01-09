@@ -1,0 +1,115 @@
+.home {
+  &-bg {
+    width: 100%;
+    height: 700px;
+    background-image: url("../../assets/images/home-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; // 滾動視差
+    @include xl {
+      height: 600px;
+    }
+    @include md {
+      background-attachment: scroll;
+      height: 400px;
+    }
+    position: relative;
+  }
+  &-bg-info {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(calc(-50% + 52px));
+    z-index: 4;
+    color: white;
+    @include md {
+      transform: translateY(calc(-50%));
+    }
+  }
+  &-title {
+    font-size: 3rem;
+    font-weight: 800;
+    @include md {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  &-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    @include md {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.overlay {
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.billboard {
+  border-top: 3px solid $fufu-primary;
+  border-bottom: 3px solid $fufu-primary;
+}
+
+.services {
+  background-color: $fufu-primary;
+  width: 100%;
+  color: white;
+  .service {
+    flex-grow: 1;
+    flex-basis: 20%;
+    .imageContainer {
+      height: 300px;
+      width: 100%;
+      overflow: hidden;
+      &:hover {
+        img {
+          filter: blur(0);
+          transform: scale(1);
+        }
+      }
+      img {
+        transition: transform 1s, filter 2s ease-in-out;
+        filter: blur(1px);
+        transform: scale(1.2);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      @include md {
+        height: 180px;
+      }
+      .imageOverlay {
+        background-color: black;
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .imageText {
+        font-weight: 500;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@mixin text($color) {
+  color: $color !important;
+}
+
+.text-primary {
+  @include text($fufu-primary);
+}
+
+.text-secondary {
+  @include text($fufu-secondary);
+}
+
+.text-tertiary {
+  @include text($fufu-tertiary);
+}
+
+.text-quaternary {
+  @include text($fufu-quaternary);
+}
+
+.text-white {
+  @include text(white);
+}

@@ -1,0 +1,64 @@
+.notice {
+  cursor: pointer;
+  border-bottom: 1px solid $gray-400;
+  font-size: 1.5rem;
+  > div {
+    flex-grow: 1;
+    @include md {
+      width: 100%;
+    }
+  }
+  @include md {
+    font-size: 1.2rem;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    .noticeTitle {
+      color: $fufu-primary;
+    }
+    .noticeMore {
+      opacity: 1;
+    }
+  }
+  .titles {
+    overflow: hidden;
+  }
+}
+.noticeTitle,
+.noticeSubtitle {
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  span {
+    font-weight: 300;
+  }
+}
+.noticeSubtitle {
+  color: $gray-500;
+  font-size: 1rem;
+  @include md {
+    font-size: 0.9rem;
+  }
+}
+.noticeDate {
+  font-size: 0.8rem;
+  color: $gray-500;
+  flex-basis: 80px;
+  @include md {
+    text-align: right;
+  }
+}
+.noticeMore {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: $fufu-primary;
+  @include md {
+    display: none;
+  }
+}

@@ -1,0 +1,37 @@
+.pageBg {
+  width: 100%;
+  height: 180px;
+  background-image: url("../../assets/images/home-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; // 滾動視差
+  position: relative;
+  .pageTitle {
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    font-size: 3rem;
+    color: white;
+  }
+  @include md {
+    height: 120px;
+    .pageTitle {
+      font-size: 2rem;
+    }
+  }
+
+  .pageBgOverlay {
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.2;
+    z-index: 2;
+  }
+}

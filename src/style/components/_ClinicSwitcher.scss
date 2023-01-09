@@ -1,0 +1,66 @@
+.clinicSwitcher {
+  display: inline-block;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 300;
+  color: $fufu-primary;
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  &.active {
+    font-weight: 500;
+  }
+  &.selected {
+    width: unset;
+    display: block;
+    margin-bottom: 0;
+    margin-right: 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding: 10px;
+    color: white;
+    background-color: $fufu-secondary;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 101;
+    .material-icons {
+      scale: 1.5;
+    }
+  }
+  .logo {
+    height: 2rem;
+    transform: scale(2);
+  }
+  @include sm {
+    text-align: center;
+    font-size: 1.5rem;
+    .logo {
+      height: 1.5rem;
+    }
+  }
+}
+
+.options {
+  z-index: 101;
+  position: absolute;
+  width: calc(100% - 32px); // 32px: 外層mx-3
+}
+
+.option {
+  border-top: 1px solid $gray-300;
+  border-left: 1px solid $gray-300;
+  border-right: 1px solid $gray-300;
+  font-size: 1.3rem;
+  padding: 16px;
+  color: $fufu-secondary;
+  text-align: left;
+  background-color: #fff;
+  &:active {
+    background-color: $fufu-primary;
+    color: white;
+  }
+  &:last-child {
+    border-bottom: 1px solid $gray-300;
+  }
+}

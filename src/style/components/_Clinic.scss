@@ -1,0 +1,23 @@
+.clinic {
+  .description {
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .contacts {
+    font-weight: 300;
+    flex-basis: 40%;
+    p {
+      line-height: 1.5;
+    }
+    @include md {
+      font-size: 0.9rem;
+    }
+  }
+  .googleMap {
+    flex-basis: 40%;
+  }
+}
