@@ -28,13 +28,15 @@
 }
 .noticeTitle,
 .noticeSubtitle {
-  font-weight: 500;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   span {
     font-weight: 300;
   }
+}
+.noticeTitle {
+  font-weight: 200;
 }
 .noticeSubtitle {
   color: $gray-500;

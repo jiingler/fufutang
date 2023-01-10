@@ -26,6 +26,9 @@ body {
 
 .body {
   padding-bottom: $footer-height;
+  @include lg {
+    padding-bottom: $footer-lg-height;
+  }
   @include md {
     padding-bottom: $footer-md-height;
   }

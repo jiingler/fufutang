@@ -1,15 +1,14 @@
 import React from "react";
-import logo from "../assets/logo/Fufutang-logo-pink-line-only-logo.svg";
 
 type MediumTitleProps = {
   text: string;
-  color: "white" | "primary" | "secondary" | "tertiary" | "quaternary";
+  color?: "white" | "primary" | "light" | "deep" | "black";
   isShowLogo?: boolean;
 };
 
 const MediumTitle: React.FC<MediumTitleProps> = ({
   text,
-  color,
+  color = "black",
   isShowLogo,
 }) => {
   return (

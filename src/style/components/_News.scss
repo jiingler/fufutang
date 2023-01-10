@@ -62,18 +62,18 @@
   &-category {
     font-size: 1.25rem;
     position: relative;
-    color: $fufu-secondary;
+    color: $fufu-primary-deep;
     &::before {
       height: 1px;
       width: 100%;
-      background: $fufu-secondary;
+      background: $fufu-primary-deep;
       position: absolute;
       left: 0;
       content: "";
       top: 12px;
     }
     span {
-      background-color: $fufu-quaternary;
+      background-color: $fufu-primary-light;
       display: inline-block;
       padding: 0 8px 0 0;
       position: relative;
@@ -83,7 +83,7 @@
     padding-left: 25px;
   }
   &-title {
-    color: $fufu-secondary;
+    color: $fufu-primary-deep;
     font-size: 2.5rem;
     margin-right: 100px;
     line-height: 1.3;

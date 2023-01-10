@@ -36,9 +36,8 @@
       .cell {
         background-color: #ebeff0;
         &.work {
-          color: $fufu-secondary;
+          color: $fufu-primary-deep;
           .doctorName {
-            font-weight: 500;
           }
           .clinicType {
             font-weight: 300;

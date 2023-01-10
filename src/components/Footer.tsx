@@ -25,16 +25,16 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-secondary footer">
+    <footer className="bg-primary-deep footer">
       <div className="container top-half d-md-flex align-items-center">
         <div className="logo">
           <img src={logoWhiteV} alt="logo" />
         </div>
         <div className="links ms-md-3">
-          <div className="d-md-flex justify-content-around">
+          <div className="d-lg-flex justify-content-around">
             <div className="link mb-md-0 mb-3">
               <h5 className="title">網站連結</h5>
-              <ul className="list">
+              <ul className="list d-lg-block d-md-flex d-block">
                 <li className="py-2">
                   <Link to="/news">最新消息</Link>
                 </li>
@@ -47,9 +47,9 @@ const Footer = () => {
                 <li className="py-2">
                   <a>服務項目</a>
                 </li>
-                <li className="py-2">
+                {/* <li className="py-2">
                   <a>文章分享</a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="link mb-md-0 mb-3">
@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
             <div className="link mb-md-0 mb-3">
               <h5 className="title">關注我們</h5>
-              <div className="d-flex">
+              <div className="d-flex ms-lg-0 ms-3">
                 <a href="" className="me-3">
                   <img src={facebook} alt="facebook" />
                 </a>

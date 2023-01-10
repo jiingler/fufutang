@@ -35,14 +35,10 @@
   @include button($fufu-primary);
 }
 
-.btn-secondary {
-  @include button($fufu-secondary);
+.btn-light {
+  @include button($fufu-primary-light);
 }
 
-.btn-tertiary {
-  @include button($fufu-tertiary);
-}
-
-.btn-quaternary {
-  @include button($fufu-quaternary);
+.btn-deep {
+  @include button($fufu-primary-deep);
 }

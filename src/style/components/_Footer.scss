@@ -5,12 +5,18 @@
   width: 100%;
   padding: 20px 0;
   color: white;
+  @include lg {
+    height: $footer-lg-height;
+  }
   @include md {
     padding: 0;
     height: $footer-md-height;
   }
   .top-half {
     padding: 40px 20px 0;
+    @include lg {
+      padding: 1rem 1rem;
+    }
   }
   .logo {
     height: 250px;
@@ -30,26 +36,38 @@
         filter: grayscale(0);
       }
       .title {
+        font-weight: 200;
         font-size: 1.5rem;
-        font-weight: 500;
         position: relative;
         margin-bottom: 2rem;
         &:before {
           content: "";
           position: absolute;
           width: 40px;
-          height: 5px;
+          height: 3px;
           top: 30px;
-          background-color: $fufu-tertiary;
+          background-color: $fufu-primary-light;
+        }
+        @include lg {
+          font-size: 1.2rem;
+          margin-top: 1rem;
+          margin-bottom: 1.5rem;
         }
       }
       .list {
-        font-weight: 300;
-      }
-      li {
-        font-size: 1rem;
-        a {
-          color: white;
+        li {
+          font-size: 1rem;
+          a {
+            color: white;
+          }
+        }
+        @include lg {
+          li {
+            margin-left: 1rem;
+          }
+        }
+        @include sm {
+          margin-left: 0;
         }
       }
       @include md {
@@ -63,7 +81,7 @@
             width: 100%;
             height: 2px;
             top: 25px;
-            background-color: $fufu-tertiary;
+            background-color: $fufu-primary-light;
           }
         }
         li {

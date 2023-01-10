@@ -5,9 +5,6 @@
       cursor: pointer;
       display: block;
       text-decoration: none !important;
-      &:hover {
-        text-decoration: underline !important;
-      }
     }
   }
 }
@@ -18,31 +15,110 @@
       color: black !important;
       font-size: 1.5rem;
       transition: padding 0.5s;
+      position: relative;
     }
   }
   &.hightBar {
     a {
-      padding: 3rem 2rem;
+      padding: 3rem 1rem;
       @include xl {
         font-size: 1.2rem;
-        padding: 3rem 1.5rem;
+        padding: 3rem 1rem;
       }
       @include lg {
         font-size: 1.2rem;
         padding: 3rem 1rem;
+      }
+      // 目前頁面
+      &.active {
+        &::before {
+          content: "";
+          position: absolute;
+          height: 3px;
+          bottom: calc(3rem - 8px);
+          background-color: $fufu-primary;
+          width: calc(100% - 2rem);
+          @include xl {
+            width: calc(100% - 2rem);
+          }
+          @include lg {
+            width: calc(100% - 2rem);
+          }
+        }
+      }
+      // hover設定
+      &::before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 0;
+        background-color: transparent;
+        transition: width 0.5s ease-in-out;
+        bottom: calc(3rem - 8px);
+      }
+      &:hover {
+        &::before {
+          background-color: $fufu-primary;
+          width: calc(100% - 2rem);
+          @include xl {
+            width: calc(100% - 2rem);
+          }
+          @include lg {
+            width: calc(100% - 2rem);
+          }
+        }
       }
     }
   }
   &.lowBar {
     a {
-      padding: 2rem;
+      padding: 2rem 1rem;
       @include xl {
         font-size: 1.2rem;
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem;
       }
       @include lg {
         font-size: 1.2rem;
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
+      }
+      // 目前頁面
+      &.active {
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: calc(2rem - 8px);
+          height: 3px;
+          background-color: $fufu-primary;
+          width: calc(100% - 2rem);
+          @include xl {
+            width: calc(100% - 2rem);
+          }
+          @include lg {
+            width: calc(100% - 2rem);
+          }
+        }
+      }
+      // hover設定
+      &::before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 0;
+        background-color: transparent;
+        bottom: calc(2rem - 8px);
+        transition: width 0.5s ease-in-out;
+      }
+      &:hover {
+        &::before {
+          background-color: $fufu-primary;
+          width: calc(100% - 4rem);
+          @include xl {
+            width: calc(100% - 3rem);
+          }
+          @include lg {
+            width: calc(100% - 2rem);
+          }
+        }
       }
     }
   }

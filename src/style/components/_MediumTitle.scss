@@ -1,5 +1,5 @@
 .medium-title {
-  font-weight: 300;
+  font-weight: bold;
   font-size: 2rem;
   margin: 2rem 0 4rem;
   @include md {
@@ -12,18 +12,18 @@
     position: relative;
     &:before {
       content: "";
-      height: 5px;
+      height: 3px;
       width: 30px;
-      background-color: $fufu-tertiary;
+      background-color: $fufu-primary-light;
       position: absolute;
       top: 50%;
       left: -40px;
     }
     &:after {
       content: "";
-      height: 5px;
+      height: 3px;
       width: 30px;
-      background-color: $fufu-tertiary;
+      background-color: $fufu-primary-light;
       position: absolute;
       top: 50%;
       right: -40px;

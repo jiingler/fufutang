@@ -23,9 +23,8 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
   return (
     <nav>
       <ul
-        className={`menu d-md-flex d-none ${
-          scrollY <= 10 && location.pathname === "/" ? "white" : "black"
-        }
+        className={`menu d-md-flex d-none ${scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+          }
           ${scrollY <= 10 ? "hightBar" : "lowBar"}`}
       >
         <li>
@@ -40,9 +39,9 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
         <li>
           <a>服務項目</a>
         </li>
-        <li>
+        {/* <li>
           <a>文章分享</a>
-        </li>
+        </li> */}
       </ul>
       <div
         className="hamburger d-md-none d-block position-absolute"
@@ -52,18 +51,16 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
           <span className={`material-icons black`}>close</span>
         ) : (
           <span
-            className={`material-icons ${
-              scrollY <= 10 && location.pathname === "/" ? "white" : "black"
-            }`}
+            className={`material-icons ${scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+              }`}
           >
             menu
           </span>
         )}
       </div>
       <div
-        className={`phone-menu position-absolute ${
-          showMenu ? "show" : "hide"
-        } `}
+        className={`phone-menu position-absolute ${showMenu ? "show" : "hide"
+          } `}
       >
         <ul className="list">
           <li className="py-3">
@@ -78,9 +75,9 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
           <li className="py-3">
             <a>服務項目</a>
           </li>
-          <li className="py-3">
+          {/* <li className="py-3">
             <a>文章分享</a>
-          </li>
+          </li> */}
         </ul>
       </div>
 

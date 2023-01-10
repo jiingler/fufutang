@@ -93,7 +93,7 @@ const HomePage = () => {
       </div>
 
       <div className="container block">
-        <MediumTitle text="最新消息" color="primary" isShowLogo={true} />
+        <MediumTitle text="最新消息" isShowLogo={true} />
         <div className="px-2">
           {notices.map((notice) => (
             <Notice notice={notice} key={notice.id} />
@@ -110,8 +110,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="services block">
-        <MediumTitle text="服務介紹" color="white" isShowLogo={true} />
+      <div className="services block bg-wood">
+        <MediumTitle text="服務介紹" isShowLogo={true} />
         <div className="container d-md-flex justify-content-between d-block">
           {services.map((service, index) => (
             <div className="service py-md-4 py-3 px-md-3 px-0" key={index}>
@@ -126,7 +126,7 @@ const HomePage = () => {
       </div>
 
       <div className="container block">
-        <MediumTitle text="門診時間" color="primary" isShowLogo={true} />
+        <MediumTitle text="門診時間" isShowLogo={true} />
         {currentClinic && <ClinicTime clinicId={currentClinic.id} />}
       </div>
     </>
