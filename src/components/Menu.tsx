@@ -21,7 +21,7 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
     console.log(scrollY);
   }, [scrollY]);
   return (
-    <nav>
+    <nav role="navigation">
       <ul
         className={`menu d-md-flex d-none ${scrollY <= 10 && location.pathname === "/" ? "white" : "black"
           }

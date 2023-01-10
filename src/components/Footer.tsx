@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="link mb-md-0 mb-3">
               <h5 className="title">關注我們</h5>
               <div className="d-flex ms-lg-0 ms-3">
-                <a href="" className="me-3">
+                <a href="https://www.facebook.com/fufutangtcm" target="_blank" className="me-3">
                   <img src={facebook} alt="facebook" />
                 </a>
                 <a href="" className="me-3">
