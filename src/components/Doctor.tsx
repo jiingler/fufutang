@@ -61,12 +61,12 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
 
       <div className="container block">
         <div className="doctor-expertise">
-          <MediumTitle text="醫師專長" color="primary" isShowLogo={true} />
+          <MediumTitle text="醫師專長" isShowLogo={true} />
           <div className="container">
             <div className="row g-3">
               {doctor?.majorServices?.map((service, index) => (
                 <div className="col-md-4 col-12" key={index}>
-                  <div className="expertise">
+                  <div className="expertise bg-wood">
                     <h4 className="title">{service?.title}</h4>
                     <p className="description">{service?.description}</p>
                   </div>

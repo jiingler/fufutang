@@ -7,6 +7,9 @@ type Clinic = {
   images?: Image[];
   clinicPeriod?: ClinicPeriod[];
   clinicTime?: ClinicTimes[];
+  transportation?: Transportation
+  parkingLots?: string[];
+  googleMapFrame?: string;
 };
 
 // type ClinicOptional = Partial<Clinic>;

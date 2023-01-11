@@ -32,9 +32,9 @@ const Footer = () => {
         </div>
         <div className="links ms-md-3">
           <div className="d-lg-flex justify-content-around">
-            <div className="link mb-md-0 mb-3">
+            <div className="link mb-lg-0 mb-3">
               <h5 className="title">網站連結</h5>
-              <ul className="list d-lg-block d-md-flex d-block">
+              <ul className="list d-lg-block d-flex">
                 <li className="py-2">
                   <Link to="/news">最新消息</Link>
                 </li>
@@ -52,7 +52,7 @@ const Footer = () => {
                 </li> */}
               </ul>
             </div>
-            <div className="link mb-md-0 mb-3">
+            <div className="link mb-lg-0 mb-3">
               <h5 className="title">聯絡資訊</h5>
               <ul className="list">
                 <li className="py-2">
@@ -75,7 +75,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="link mb-md-0 mb-3">
+            <div className="link mb-lg-0 mb-3">
               <h5 className="title">關注我們</h5>
               <div className="d-flex ms-lg-0 ms-3">
                 <a href="https://www.facebook.com/fufutangtcm" target="_blank" className="me-3">

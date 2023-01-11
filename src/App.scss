@@ -5,13 +5,14 @@
 @import "./style/custom";
 @import "./style/components";
 @import "./style/pages";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;700&display=swap");
 
 html,
 body,
 #root,
 .App {
   height: 100%;
-  font-family: custom-font-family;
+  font-family: "Noto Sans TC", sans-serif !important;
 }
 
 .App {

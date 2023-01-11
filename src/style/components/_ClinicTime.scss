@@ -38,9 +38,10 @@
         &.work {
           color: $fufu-primary-deep;
           .doctorName {
+            font-weight: bold;
           }
           .clinicType {
-            font-weight: 300;
+            font-weight: normal;
             font-size: 0.8rem;
           }
         }
@@ -48,7 +49,7 @@
           color: $gray-400;
         }
         p.time {
-          font-weight: 300;
+          font-weight: normal;
           font-size: 0.8rem;
           &:nth-child(3) {
             font-size: 0.5rem;
@@ -64,7 +65,7 @@
     }
   }
   .remarks {
-    font-weight: 300;
+    font-weight: normal;
     font-size: 0.9rem;
   }
 }

@@ -32,15 +32,16 @@
   overflow: hidden;
   white-space: nowrap;
   span {
-    font-weight: 300;
+    font-weight: normal;
   }
 }
 .noticeTitle {
-  font-weight: 200;
+  font-weight: normal;
 }
 .noticeSubtitle {
   color: $gray-500;
   font-size: 1rem;
+  font-weight: lighter;
   @include md {
     font-size: 0.9rem;
   }
