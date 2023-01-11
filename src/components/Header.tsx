@@ -24,17 +24,18 @@ const Header = () => {
     };
   }, [y]);
 
-  useEffect(() => { }, [location]);
+  useEffect(() => {}, [location]);
 
   return (
     <header
-      className={`nav ${y <= 10 && location.pathname === "/" ? "transparent" : ""
-        }`}
+      className={`nav ${
+        y <= 10 && location.pathname === "/" ? "transparent" : ""
+      }`}
     >
       <nav className={`py-2 w-100`}>
         <div className="wrap w-100 d-flex align-items-center">
           <div className="w-100 d-flex justify-content-between px-3">
-            <div className="logo d-flex align-items-center">
+            <div className="logo d-flex align-items-center ms-lg-5 ms-0">
               <Link title="福福堂中醫診所 Fu Fu Tang | 高雄中醫" to="/">
                 <h1 className={`${y <= 10 ? "" : "smallScale"}`}>
                   福福堂中醫診所 Fu Fu Tang | 高雄中醫

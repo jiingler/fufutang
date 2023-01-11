@@ -2,7 +2,7 @@ import * as React from "react";
 
 type ButtonProps = {
   isOutlined: boolean;
-  type: "primary" | "light" | "deep";
+  type: "primary" | "light" | "deep" | "wood";
   text: string;
   iconName?: string;
   callback: () => void;

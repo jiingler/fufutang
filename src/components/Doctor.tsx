@@ -1,7 +1,10 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 import MediumTitle from "./MediumTitle";
 
 const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
+  const navigate = useNavigate();
   return (
     <div className="doctor">
       <div className="container block pb-0">
@@ -73,6 +76,16 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="text-center mt-4">
+            <Button
+              type="primary"
+              text="更多服務介紹"
+              isOutlined={false}
+              callback={() => navigate("/services")}
+              iconName="arrow_circle_right"
+            />
           </div>
         </div>
       </div>

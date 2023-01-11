@@ -10,7 +10,7 @@ const NewsPage = () => {
       clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
       paragraphs: [],
-      regDate: "2022-12-24",
+      regDate: "2023-01-08",
     },
     {
       id: "002",
@@ -18,7 +18,7 @@ const NewsPage = () => {
       clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
       paragraphs: [],
-      regDate: "2022-12-24",
+      regDate: "2023-01-08",
     },
     {
       id: "003",

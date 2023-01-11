@@ -17,16 +17,18 @@
   @include md {
     padding: 8px 16px;
   }
+  @include sm {
+    font-size: 0.9rem;
+  }
   &:hover {
     background-color: darken($color, 8%);
   }
   &.outlined {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid $color;
+    color: $color;
     &:hover {
-      background-color: white;
-      color: #3f4e4f;
+      background-color: #0000000a;
     }
   }
 }
@@ -41,4 +43,8 @@
 
 .btn-deep {
   @include button($fufu-primary-deep);
+}
+
+.btn-wood {
+  @include button($fufu-wood);
 }

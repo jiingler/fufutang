@@ -28,7 +28,7 @@ const HomePage = () => {
       clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
       paragraphs: [],
-      regDate: "2022-12-24",
+      regDate: "2023-01-08",
     },
     {
       id: "002",
@@ -36,7 +36,7 @@ const HomePage = () => {
       clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
       paragraphs: [],
-      regDate: "2022-12-24",
+      regDate: "2023-01-08",
     },
     {
       id: "003",
@@ -99,7 +99,7 @@ const HomePage = () => {
             <News news={notice} key={notice.id} />
           ))}
         </div>
-        <div className="text-center mt-md-3 mt-2">
+        <div className="text-center mt-4">
           <Button
             type="primary"
             text="更多最新消息"
@@ -111,7 +111,7 @@ const HomePage = () => {
       </div>
 
       <div className="services block bg-wood">
-        <MediumTitle text="服務介紹" isShowLogo={true} />
+        <MediumTitle text="服務項目" isShowLogo={true} />
         <div className="container d-md-flex justify-content-between d-block">
           {services.map((service, index) => (
             <div className="service py-md-4 py-3 px-md-3 px-0" key={index}>
@@ -122,6 +122,15 @@ const HomePage = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-4">
+          <Button
+            type="primary"
+            text="更多服務項目"
+            isOutlined={true}
+            callback={() => navigate("/services")}
+            iconName="arrow_circle_right"
+          />
         </div>
       </div>
 
