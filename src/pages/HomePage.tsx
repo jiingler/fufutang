@@ -6,7 +6,7 @@ import acupuncture from "../assets/images/acupuncture.jpg";
 import exercise from "../assets/images/exercise.jpg";
 import meditation from "../assets/images/meditation.jpg";
 import MediumTitle from "../components/MediumTitle";
-import Notice from "../components/Notice";
+import News from "../components/News";
 import ClinicTime from "../components/ClinicTime";
 import { useEffect, useState } from "react";
 import { AppService } from "../services/app.service";
@@ -25,25 +25,25 @@ const HomePage = () => {
     {
       id: "001",
       title: "福福堂慶開幕活動",
-      clinicId: "fufu",
+      clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
-      content: "",
+      paragraphs: [],
       regDate: "2022-12-24",
     },
     {
       id: "002",
       title: "掛號須知",
-      clinicId: "fufu",
+      clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
-      content: "",
+      paragraphs: [],
       regDate: "2022-12-24",
     },
     {
       id: "003",
       title: "自費門診掛號",
-      clinicId: "fufu",
+      clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
-      content: "",
+      paragraphs: [],
       regDate: "2022-12-24",
     },
   ];
@@ -96,7 +96,7 @@ const HomePage = () => {
         <MediumTitle text="最新消息" isShowLogo={true} />
         <div className="px-2">
           {notices.map((notice) => (
-            <Notice notice={notice} key={notice.id} />
+            <News news={notice} key={notice.id} />
           ))}
         </div>
         <div className="text-center mt-md-3 mt-2">

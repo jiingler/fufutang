@@ -10,6 +10,7 @@ type Clinic = {
   transportation?: Transportation
   parkingLots?: string[];
   googleMapFrame?: string;
+  philosophy?: string[];
 };
 
 // type ClinicOptional = Partial<Clinic>;

@@ -13,17 +13,18 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
         <MediumTitle text="門診時間" isShowLogo={true} />
         <ClinicTime clinicId={clinic.id} />
       </div>
-      <div className="clinic-philosophy bg-wood block">
-        <div className="container">
-          <MediumTitle text="診所理念" isShowLogo={true} />
-          <p className="description">
-            《道德經》：「道生一，一生二，二生三，三生萬物。」宇宙是一個整體，而人體就像是一個小宇宙，應該被視為一個整體。
-          </p>
-          <p className="description">
-            我們的思維有別於西醫或大部分的現代中醫，我們不是見一個症狀就打一個或哪裡有問題就切掉，而是會以整體的最大利益為出發點，在衛教和治療上去思考如何減輕身體負擔、破壞最少，並且讓大家一起練習善待自己的身體、與自己的身體和平共處，進而達到最大的福祉。
-          </p>
+      {!!clinic?.philosophy && clinic.philosophy.length > 0 && (
+        <div className="clinic-philosophy bg-wood block">
+          <div className="container">
+            <MediumTitle text="診所理念" isShowLogo={true} />
+            {clinic.philosophy.map(paragraph => (
+              <p className="description">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <div className="container block">
         <MediumTitle text="交通資訊" isShowLogo={true} />
         <div className="d-md-flex justify-content-around d-block">

@@ -3,9 +3,9 @@ type News = {
   title: string;
   subTitle?: string;
   category?: NewsCategory; //default 0
-  clinicId: string;
+  clinics: Clinic[];
   imageUrl?: string;
-  content: string;
+  paragraphs: string[];
   regDate: string;
   updateDate?: string;
 };

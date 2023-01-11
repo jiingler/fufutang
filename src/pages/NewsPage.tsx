@@ -1,4 +1,4 @@
-import Notice from "../components/Notice";
+import News from "../components/News";
 import PageTitle from "../components/PageTitle";
 
 const NewsPage = () => {
@@ -7,25 +7,25 @@ const NewsPage = () => {
       id: "001",
       title: "福福堂慶開幕活動",
       subTitle: "活動期間02/01 ~ 02/28",
-      clinicId: "fufu",
+      clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
-      content: "",
+      paragraphs: [],
       regDate: "2022-12-24",
     },
     {
       id: "002",
       title: "掛號須知",
-      clinicId: "fufu",
+      clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
-      content: "",
+      paragraphs: [],
       regDate: "2022-12-24",
     },
     {
       id: "003",
       title: "自費門診掛號",
-      clinicId: "fufu",
+      clinics: [{ id: "fufu", name: "福福堂" }],
       imageUrl: "",
-      content: "",
+      paragraphs: [],
       regDate: "2022-12-24",
     },
   ];
@@ -36,7 +36,7 @@ const NewsPage = () => {
       <div className="container my-5">
         <div className="">
           {notices.map((notice) => (
-            <Notice notice={notice} key={notice.id} />
+            <News news={notice} key={notice.id} />
           ))}
         </div>
       </div>
