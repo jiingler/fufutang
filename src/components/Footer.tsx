@@ -45,7 +45,7 @@ const Footer = () => {
                   <Link to="/clinics">診所介紹</Link>
                 </li>
                 <li className="py-2">
-                  <a>服務項目</a>
+                  <Link to="/services">服務項目</Link>
                 </li>
                 {/* <li className="py-2">
                   <a>文章分享</a>
@@ -81,10 +81,10 @@ const Footer = () => {
                 <a href="https://www.facebook.com/fufutangtcm" target="_blank" className="me-3">
                   <img src={facebook} alt="facebook" />
                 </a>
-                <a href="" className="me-3">
+                {/* <a href="" className="me-3">
                   <img src={instagram} alt="instagram" />
-                </a>
-                <a href="" className="me-3">
+                </a> */}
+                <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=785mxvqt" className="me-3">
                   <img src={line} alt="line" />
                 </a>
               </div>

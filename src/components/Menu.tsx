@@ -37,7 +37,7 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
           <Link to="/clinics">診所介紹</Link>
         </li>
         <li>
-          <a>服務項目</a>
+          <Link to="/services">服務項目</Link>
         </li>
         {/* <li>
           <a>文章分享</a>
@@ -73,7 +73,7 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
             <Link to="/clinics">診所介紹</Link>
           </li>
           <li className="py-3">
-            <a>服務項目</a>
+            <Link to="/services">服務項目</Link>
           </li>
           {/* <li className="py-3">
             <a>文章分享</a>
