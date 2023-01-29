@@ -1,29 +1,38 @@
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import fbShare from "../assets/logo/fb-share.png";
 import lineShare from "../assets/logo/line-share.png";
 import Button from "../components/Button";
 import NewLabel from "../components/NewLabel";
+import { AppService } from "../services/app.service";
 
 const NewsDetailPage = () => {
   const navigate = useNavigate();
-  const newsId = useParams();
+  const { id: newsId } = useParams();
+  console.log(newsId);
 
   const href =
     "javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));";
 
-  const news = {
-    id: "001",
-    title: "福福堂慶開幕活動",
-    subTitle: "活動期間02/01 ~ 02/28",
-    clinics: [{ id: "fufu", name: "福福堂" }],
-    imageUrl:
-      "https://www.huish.ac.uk/wp-content/uploads/2022/06/Open-Event.jpg",
-    paragraphs: [
-      "賀開幕!於開幕期間至福福堂中醫診所看診，即可獲得XXX乙個。賀開幕!於開幕期間至福福堂中醫診所看診，即可獲得XXX乙個。\n賀開幕!於開幕期間至福福堂中醫診所看診，即可獲得XXX乙個。賀開幕!於開幕期間至福福堂中醫診所看診，即可獲得XXX乙個。賀開幕!於開幕期間至福福堂中醫診所看診，即可獲得XXX乙個。賀開幕!於開幕期間至福福堂中醫診所看診，即可獲得XXX乙個。",
-      "活動日期: 112年2月5日 ~ 112年2月28日",
-    ],
-    regDate: "2023-01-08",
+  const [news, setNews] = useState<News>();
+
+  const appService = new AppService();
+
+  const getNewsDetail = async () => {
+    return await appService.get<News>(`News/${newsId}`, null);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const news = await getNewsDetail();
+      if (!news) {
+        navigate("/news");
+      }
+      setNews({ ...news });
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="page py-5">
       <div className="container newsDetail">
@@ -36,21 +45,21 @@ const NewsDetailPage = () => {
         )} */}
         <div className="titleField d-md-flex justify-content-between align-items-end d-block">
           <h3 className="title mb-md-0 mb-2">
-            {news.title}
-            <NewLabel dateString={news.regDate} />
+            {news?.title}
+            <NewLabel dateString={news?.regDate || ""} />
           </h3>
-          <p className="regDate">公告日期：{news.regDate}</p>
+          <p className="regDate">公告日期：{news?.regDate}</p>
         </div>
         <div className="content p-md-5 p-3">
-          {news?.imageUrl && (
+          {news?.image && (
             <div className="image-container">
-              <img src={news.imageUrl} alt={news.title} />
+              <img src={news?.image} alt={news?.title} />
             </div>
           )}
           <div className="paragraphs mt-md-5 mt-3">
-            {!!news?.paragraphs && news.paragraphs.length > 0 && (
+            {!!news?.paragraphs && news?.paragraphs.length > 0 && (
               <>
-                {news.paragraphs.map((paragraph, idx) => (
+                {news?.paragraphs.map((paragraph, idx) => (
                   <p className="paragraph mb-4" key={idx}>
                     {paragraph}
                   </p>
@@ -59,7 +68,7 @@ const NewsDetailPage = () => {
             )}
           </div>
         </div>
-        <div className="share d-flex align-items-center justify-content-md-start justify-content-center">
+        {/* <div className="share d-flex align-items-center justify-content-md-start justify-content-center">
           <p className="me-2">分享這則文章：</p>
           <a
             className="line me-2"
@@ -77,7 +86,7 @@ const NewsDetailPage = () => {
           >
             <img src={fbShare} alt="可將此頁面資訊分享至Facebook" />
           </a>
-        </div>
+        </div> */}
         <div className="text-center mt-4">
           <Button
             type="primary"

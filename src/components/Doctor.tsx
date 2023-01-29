@@ -8,7 +8,10 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
   return (
     <div className="doctor">
       <div className="container block pb-0">
-        <div className="d-md-flex justify-content-center align-items-center d-block">
+        <div className="d-md-flex justify-content-center align-items-center d-block mb-md-0 mb-4">
+          <div className="profile-image mb-md-0 mb-3">
+            <img src={doctor?.image} alt="醫師形象照" />
+          </div>
           <div className="d-md-block d-flex flex-row-reverse justify-content-between align-items-end mx-md-0 mx-3">
             <div className="clinic d-flex mb-2">
               {doctor?.clinics?.map((clinic, idx) => (
@@ -19,9 +22,6 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
               {doctor?.name}{" "}
               <span className="doctor-position">{doctor?.position}</span>
             </h3>
-          </div>
-          <div className="profile-image">
-            <img src={doctor?.image} alt="醫師形象照" />
           </div>
         </div>
       </div>

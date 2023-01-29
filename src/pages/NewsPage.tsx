@@ -1,42 +1,32 @@
+import { useState, useEffect } from "react";
 import News from "../components/News";
 import PageTitle from "../components/PageTitle";
+import { AppService } from "../services/app.service";
 
 const NewsPage = () => {
-  const notices: News[] = [
-    {
-      id: "001",
-      title: "福福堂慶開幕活動",
-      subTitle: "活動期間02/01 ~ 02/28",
-      clinics: [{ id: "fufu", name: "福福堂" }],
-      imageUrl: "",
-      paragraphs: [],
-      regDate: "2023-01-08",
-    },
-    {
-      id: "002",
-      title: "掛號須知",
-      clinics: [{ id: "fufu", name: "福福堂" }],
-      imageUrl: "",
-      paragraphs: [],
-      regDate: "2023-01-08",
-    },
-    {
-      id: "003",
-      title: "自費門診掛號",
-      clinics: [{ id: "fufu", name: "福福堂" }],
-      imageUrl: "",
-      paragraphs: [],
-      regDate: "2022-12-24",
-    },
-  ];
+  const [newsList, setNewsList] = useState<News[]>([]);
+
+  const appService = new AppService();
+
+  const getAllNews = async () => {
+    return await appService.get<News[]>("News", null);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const news = await getAllNews();
+      setNewsList([...news]);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="page">
       <PageTitle text="最新消息" />
       <div className="container my-5">
         <div className="">
-          {notices.map((notice) => (
-            <News news={notice} key={notice.id} />
+          {newsList.map((news) => (
+            <News news={news} key={news.id} />
           ))}
         </div>
       </div>

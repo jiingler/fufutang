@@ -21,37 +21,10 @@ const HomePage = () => {
     { name: "靈氣療癒", imageUrl: meditation },
   ];
 
-  const notices: News[] = [
-    {
-      id: "001",
-      title: "福福堂慶開幕活動",
-      clinics: [{ id: "fufu", name: "福福堂" }],
-      imageUrl: "",
-      paragraphs: [],
-      regDate: "2023-01-08",
-    },
-    {
-      id: "002",
-      title: "掛號須知",
-      clinics: [{ id: "fufu", name: "福福堂" }],
-      imageUrl: "",
-      paragraphs: [],
-      regDate: "2023-01-08",
-    },
-    {
-      id: "003",
-      title: "自費門診掛號",
-      clinics: [{ id: "fufu", name: "福福堂" }],
-      imageUrl: "",
-      paragraphs: [],
-      regDate: "2022-12-24",
-    },
-  ];
-
   const [clinics, setClinics] = useState<Clinic[]>([]);
   const [currentClinic, setCurrentClinic] = useState<Clinic>();
   const [doctors, setDoctors] = useState<Doctor[]>([]);
-
+  const [newsList, setNewsList] = useState<News[]>([]);
   const appService = new AppService();
 
   const getAllClinics = async () => {
@@ -62,12 +35,18 @@ const HomePage = () => {
     return await appService.get<Doctor[]>("Doctor", null);
   };
 
+  const getAllNews = async () => {
+    return await appService.get<News[]>("News", null);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const doctors = await getAllDoctors();
       setDoctors([...doctors]);
       const clinics = await getAllClinics();
       setClinics([...clinics]);
+      const news = await getAllNews();
+      setNewsList([...news]);
       setCurrentClinic({ ...clinics[0] });
     };
     fetchData();
@@ -95,8 +74,8 @@ const HomePage = () => {
       <div className="container block">
         <MediumTitle text="最新消息" isShowLogo={true} />
         <div className="px-2">
-          {notices.map((notice) => (
-            <News news={notice} key={notice.id} />
+          {newsList.map((news) => (
+            <News news={news} key={news.id} />
           ))}
         </div>
         <div className="text-center mt-4">

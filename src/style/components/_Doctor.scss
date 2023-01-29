@@ -1,15 +1,18 @@
 .doctor {
   .profile-image {
     text-align: right;
-    max-height: 500px;
+    height: 500px;
+    padding-right: 50px;
     img {
       height: 100%;
     }
     @include sm {
+      height: 400px;
       text-align: center;
+      padding: 0;
       img {
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
   }
