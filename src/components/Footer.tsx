@@ -78,13 +78,28 @@ const Footer = () => {
             <div className="link mb-lg-0 mb-3">
               <h5 className="title">關注我們</h5>
               <div className="d-flex ms-lg-0 ms-3">
-                <a href="https://www.facebook.com/fufutangtcm" target="_blank" className="me-3">
+                <a
+                  href="https://www.facebook.com/fufutangtcm"
+                  target="_blank"
+                  className="me-3"
+                  rel="noreferrer"
+                >
                   <img src={facebook} alt="facebook" />
                 </a>
-                {/* <a href="" className="me-3">
+                <a
+                  href="https://www.instagram.com/fu.fu.tang/"
+                  target="_blank"
+                  className="me-3"
+                  rel="noreferrer"
+                >
                   <img src={instagram} alt="instagram" />
-                </a> */}
-                <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=785mxvqt" className="me-3">
+                </a>
+                <a
+                  href="https://liff.line.me/1645278921-kWRPP32q/?accountId=785mxvqt"
+                  target="_blank"
+                  className="me-3"
+                  rel="noreferrer"
+                >
                   <img src={line} alt="line" />
                 </a>
               </div>
