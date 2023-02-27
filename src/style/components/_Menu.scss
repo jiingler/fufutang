@@ -18,16 +18,29 @@
       position: relative;
     }
   }
+  button {
+    font-size: 1.5em;
+  }
   &.hightBar {
+    button {
+      @include xl {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+      @include lg {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+    }
     a {
       padding: 3rem 1rem;
       @include xl {
         font-size: 1.2rem;
-        padding: 3rem 1rem;
+        padding: 3rem 0.5rem;
       }
       @include lg {
         font-size: 1.2rem;
-        padding: 3rem 1rem;
+        padding: 3rem 0.5rem;
       }
       // 目前頁面
       &.active {
@@ -152,6 +165,10 @@
     margin-top: 50px;
     margin-left: 50px;
     font-weight: normal;
+  }
+  button {
+    padding: 16px 32px;
+    font-size: 1.5rem;
   }
 }
 

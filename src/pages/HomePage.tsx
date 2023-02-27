@@ -62,7 +62,7 @@ const HomePage = () => {
           </p>
           <Button
             type="primary"
-            text="查看門診時間＆預約"
+            text="查看門診時間"
             isOutlined={false}
             callback={() => navigate("/clinics")}
             iconName="arrow_circle_right"

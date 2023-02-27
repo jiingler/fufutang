@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Button from "./Button";
 
 type MenuProps = {
   scrollY: number;
@@ -17,14 +18,21 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
     root.style.overflowY = showMenu ? "auto" : "hidden";
   };
 
+  const closePhoneMenu = () => {
+    setShowMenu(false);
+    const root = document.querySelector("#root") as HTMLDivElement;
+    root.style.overflowY = showMenu ? "auto" : "hidden";
+  };
+
   useEffect(() => {
     console.log(scrollY);
   }, [scrollY]);
   return (
     <nav role="navigation">
       <ul
-        className={`menu d-md-flex d-none ${scrollY <= 10 && location.pathname === "/" ? "white" : "black"
-          }
+        className={`menu d-md-flex d-none ${
+          scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+        }
           ${scrollY <= 10 ? "hightBar" : "lowBar"}`}
       >
         <li>
@@ -42,6 +50,19 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
         {/* <li>
           <a>文章分享</a>
         </li> */}
+        <li className="ms-md-3 ms-1 d-flex align-items-center">
+          <Button
+            type="primary"
+            text="我要預約"
+            isOutlined={false}
+            callback={() =>
+              window.open(
+                "https://gptcm.tw/GPNET/MainReg?CID=FFT&FormType=1",
+                "_blank"
+              )
+            }
+          />
+        </li>
       </ul>
       <div
         className="hamburger d-md-none d-block position-absolute"
@@ -51,33 +72,49 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
           <span className={`material-icons black`}>close</span>
         ) : (
           <span
-            className={`material-icons ${scrollY <= 10 && location.pathname === "/" ? "white" : "black"
-              }`}
+            className={`material-icons ${
+              scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+            }`}
           >
             menu
           </span>
         )}
       </div>
       <div
-        className={`phone-menu position-absolute ${showMenu ? "show" : "hide"
-          } `}
+        className={`phone-menu position-absolute ${
+          showMenu ? "show" : "hide"
+        } `}
       >
         <ul className="list">
-          <li className="py-3">
+          <li className="py-3" onClick={closePhoneMenu}>
             <Link to="/news">最新消息</Link>
           </li>
-          <li className="py-3">
+          <li className="py-3" onClick={closePhoneMenu}>
             <Link to="/doctors">醫師介紹</Link>
           </li>
-          <li className="py-3">
+          <li className="py-3" onClick={closePhoneMenu}>
             <Link to="/clinics">診所介紹</Link>
           </li>
-          <li className="py-3">
+          <li className="py-3" onClick={closePhoneMenu}>
             <Link to="/services">服務項目</Link>
           </li>
           {/* <li className="py-3">
             <a>文章分享</a>
           </li> */}
+          <li className="py-3 d-flex align-items-center">
+            <Button
+              type="primary"
+              text="我要預約"
+              isOutlined={false}
+              callback={() => {
+                closePhoneMenu();
+                window.open(
+                  "https://gptcm.tw/GPNET/MainReg?CID=FFT&FormType=1",
+                  "_blank"
+                );
+              }}
+            />
+          </li>
         </ul>
       </div>
 

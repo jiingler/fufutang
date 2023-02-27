@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ClinicType, ClinicTypeText } from "../models/ClinicType.enum";
 import { AppService } from "../services/app.service";
 
@@ -14,6 +15,7 @@ type ClinicTimeData = {
 };
 
 const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
+  const navigate = useNavigate();
   const [clinicPeriod, setClinicPeriod] = useState<ClinicPeriod[]>([]);
   const [clinicTime, setClinicTime] = useState<ClinicTimes[]>([]);
 
@@ -45,7 +47,6 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
             <div className="cell">四</div>
             <div className="cell">五</div>
             <div className="cell">六</div>
-            <div className="cell">日</div>
           </div>
         </div>
         <div className="tableBody">
@@ -64,7 +65,7 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                       <div className="work cell" key={idx}>
                         {clinicDoctorList &&
                           clinicDoctorList?.map((clinicDoctor, j) => (
-                            <a key={j}>
+                            <a key={j} href={"/doctors"}>
                               <p className="doctorName mb-2">
                                 {clinicDoctor?.doctorName}
                               </p>
