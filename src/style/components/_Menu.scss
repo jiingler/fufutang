@@ -84,15 +84,25 @@
     }
   }
   &.lowBar {
+    button {
+      @include xl {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+      }
+      @include lg {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+      }
+    }
     a {
       padding: 2rem 1rem;
       @include xl {
         font-size: 1.2rem;
-        padding: 2rem 1rem;
+        padding: 2rem 0.5rem;
       }
       @include lg {
         font-size: 1.2rem;
-        padding: 2rem 1rem;
+        padding: 2rem 0.5rem;
       }
       // 目前頁面
       &.active {
@@ -155,6 +165,7 @@
   z-index: 25;
   font-size: 1.5rem;
   transition: right 0.5s 0.2s;
+  top: 0;
   &.show {
     right: 0;
   }
@@ -173,7 +184,7 @@
 }
 
 .hamburger {
-  top: 1rem;
+  transform: translateY(-50%);
   right: 12px;
   z-index: 30;
   .material-icons {

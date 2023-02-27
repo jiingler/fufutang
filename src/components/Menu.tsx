@@ -5,10 +5,10 @@ import { useLocation } from "react-router-dom";
 import Button from "./Button";
 
 type MenuProps = {
-  scrollY: number;
+  isShrunk: boolean;
 };
 
-const Menu: React.FC<MenuProps> = ({ scrollY }) => {
+const Menu: React.FC<MenuProps> = ({ isShrunk }) => {
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
 
@@ -24,16 +24,13 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
     root.style.overflowY = showMenu ? "auto" : "hidden";
   };
 
-  useEffect(() => {
-    console.log(scrollY);
-  }, [scrollY]);
   return (
     <nav role="navigation">
       <ul
         className={`menu d-md-flex d-none ${
-          scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+          !isShrunk && location.pathname === "/" ? "white" : "black"
         }
-          ${scrollY <= 10 ? "hightBar" : "lowBar"}`}
+          ${!isShrunk ? "hightBar" : "lowBar"}`}
       >
         <li>
           <Link to="/news">最新消息</Link>
@@ -72,8 +69,7 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
           <span className={`material-icons black`}>close</span>
         ) : (
           <span
-            className={`material-icons ${
-              scrollY <= 10 && location.pathname === "/" ? "white" : "black"
+            className={`material-icons black
             }`}
           >
             menu
@@ -81,7 +77,7 @@ const Menu: React.FC<MenuProps> = ({ scrollY }) => {
         )}
       </div>
       <div
-        className={`phone-menu position-absolute ${
+        className={`phone-menu position-absolute d-sm-none ${
           showMenu ? "show" : "hide"
         } `}
       >

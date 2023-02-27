@@ -2,34 +2,53 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
 import { useLocation } from "react-router-dom";
+import { isMobile, isBrowser } from "react-device-detect";
 
 const Header = () => {
-  const [y, setY] = useState(0);
   const location = useLocation();
 
-  const handleScroll = () => {
-    setY(window.scrollY);
-  };
-
+  const [isShrunk, setShrunk] = useState(false);
   useEffect(() => {
-    if (window.location.pathname === "/") {
-      window.addEventListener("scroll", handleScroll);
-    }
+    const handler = () => {
+      console.log(document.body.scrollTop);
+      console.log(document.documentElement.scrollTop);
+      // Check and update component here.
+      setShrunk((isShrunk) => {
+        if (
+          !isShrunk &&
+          (document.body.scrollTop >= 10 ||
+            document.documentElement.scrollTop >= 10)
+        ) {
+          return true;
+        }
 
-    return () => {
-      // return a cleanup function to unregister our function since its gonna run multiple times
-      if (window.location.pathname === "/") {
-        window.removeEventListener("scroll", handleScroll);
-      }
+        if (
+          isShrunk &&
+          document.body.scrollTop < 10 &&
+          document.documentElement.scrollTop < 10
+        ) {
+          return false;
+        }
+
+        return isShrunk;
+      });
     };
-  }, [y]);
+
+    if (isMobile) {
+      window.addEventListener("touchmove", handler);
+      return () => window.removeEventListener("touchmove", handler);
+    } else {
+      window.addEventListener("scroll", handler);
+      return () => window.removeEventListener("scroll", handler);
+    }
+  }, []);
 
   useEffect(() => {}, [location]);
 
   return (
     <header
       className={`nav ${
-        y <= 10 && location.pathname === "/" ? "transparent" : ""
+        !isShrunk && isBrowser && location.pathname === "/" ? "transparent" : ""
       }`}
     >
       <nav className={`py-2 w-100`}>
@@ -37,13 +56,13 @@ const Header = () => {
           <div className="w-100 d-flex justify-content-between px-3">
             <div className="logo d-flex align-items-center ms-lg-5 ms-0">
               <Link title="福福堂中醫診所 Fu Fu Tang | 高雄中醫" to="/">
-                <h1 className={`${y <= 10 ? "" : "smallScale"}`}>
+                <h1 className={`${!isShrunk ? "" : "smallScale"}`}>
                   福福堂中醫診所 Fu Fu Tang | 高雄中醫
                 </h1>
               </Link>
             </div>
             <div className="d-flex me-lg-5 me-0">
-              <Menu scrollY={y} />
+              <Menu isShrunk={isShrunk} />
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ const NewsPage = () => {
       <PageTitle text="最新消息" />
       <div className="container my-5">
         <div className="">
-          {newsList.map((news) => (
+          {newsList.reverse().map((news) => (
             <News news={news} key={news.id} />
           ))}
         </div>

@@ -30,7 +30,6 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
       const clinicTimeData = await getAllClinicTime();
       setClinicPeriod([...clinicTimeData.clinicPeriod]);
       setClinicTime([...clinicTimeData.clinicTime]);
-      console.log(clinicTime[0]);
     };
     fetchData();
   }, []);

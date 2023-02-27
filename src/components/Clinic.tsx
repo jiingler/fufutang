@@ -17,8 +17,8 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
         <div className="clinic-philosophy bg-wood block">
           <div className="container">
             <MediumTitle text="診所理念" isShowLogo={true} />
-            {clinic.philosophy.map(paragraph => (
-              <p className="description">
+            {clinic.philosophy.map((paragraph, idx) => (
+              <p className="description" key={idx}>
                 {paragraph}
               </p>
             ))}
@@ -31,7 +31,9 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
           <div className="contacts mb-md-0 mb-3">
             <p className="mb-md-3 mb-2">
               聯絡電話：
-              <a className="fw-lighter" href={`tel:${clinic?.tel}`}>{clinic?.tel}</a>
+              <a className="fw-lighter" href={`tel:${clinic?.tel}`}>
+                {clinic?.tel}
+              </a>
             </p>
             <p className="mb-md-3 mb-2">
               診所地址：
@@ -49,19 +51,25 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
                 <p className="mb-md-3 mb-2">大眾交通：</p>
                 <p className="mb-md-3 mb-2 ps-3">
                   火車 -
-                  <span className="fw-lighter"> {clinic.transportation?.train}</span>
+                  <span className="fw-lighter">
+                    {" "}
+                    {clinic.transportation?.train}
+                  </span>
                 </p>
                 <p className="mb-md-3 mb-2 ps-3">
                   公車 -
-                  <span className="fw-lighter"> {clinic.transportation?.bus}</span>
+                  <span className="fw-lighter">
+                    {" "}
+                    {clinic.transportation?.bus}
+                  </span>
                 </p>
               </>
             )}
             {!!clinic?.parkingLots && clinic?.parkingLots?.length > 0 && (
               <>
                 <p className="mb-md-3 mb-2">停車資訊：</p>
-                {clinic.parkingLots.map(parkingLot => (
-                  <p className="mb-md-3 mb-2 ps-3 fw-lighter">
+                {clinic.parkingLots.map((parkingLot, idx) => (
+                  <p className="mb-md-3 mb-2 ps-3 fw-lighter" key={idx}>
                     {parkingLot}
                   </p>
                 ))}

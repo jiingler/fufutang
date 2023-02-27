@@ -9,7 +9,6 @@ import { AppService } from "../services/app.service";
 const NewsDetailPage = () => {
   const navigate = useNavigate();
   const { id: newsId } = useParams();
-  console.log(newsId);
 
   const href =
     "javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));";

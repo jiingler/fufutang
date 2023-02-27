@@ -74,7 +74,7 @@ const HomePage = () => {
       <div className="container block">
         <MediumTitle text="最新消息" isShowLogo={true} />
         <div className="px-2">
-          {newsList.map((news) => (
+          {newsList.reverse().map((news) => (
             <News news={news} key={news.id} />
           ))}
         </div>
