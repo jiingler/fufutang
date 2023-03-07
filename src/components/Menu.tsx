@@ -61,6 +61,19 @@ const Menu: React.FC<MenuProps> = ({ isShrunk }) => {
           />
         </li>
       </ul>
+      <div className="reservation-btn d-md-none d-block position-absolute">
+        <Button
+          type="primary"
+          text="我要預約"
+          isOutlined={false}
+          callback={() =>
+            window.open(
+              "https://gptcm.tw/GPNET/MainReg?CID=FFT&FormType=1",
+              "_blank"
+            )
+          }
+        />
+      </div>
       <div
         className="hamburger d-md-none d-block position-absolute"
         onClick={onClick}

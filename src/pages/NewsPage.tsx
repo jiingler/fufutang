@@ -15,7 +15,7 @@ const NewsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const news = await getAllNews();
-      setNewsList([...news]);
+      setNewsList([...news.reverse()]);
     };
     fetchData();
   }, []);
@@ -25,7 +25,7 @@ const NewsPage = () => {
       <PageTitle text="最新消息" />
       <div className="container my-5">
         <div className="">
-          {newsList.reverse().map((news) => (
+          {newsList.map((news) => (
             <News news={news} key={news.id} />
           ))}
         </div>
