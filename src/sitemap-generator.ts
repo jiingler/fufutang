@@ -7,10 +7,10 @@ const Sitemap = require("react-router-sitemap").default;
 
 function generateSitemap() {
   return new Sitemap(router)
-    .build(process.env.REACT_APP_API_URL)
+    .build("https://www.fufutang.com.tw")
     .save("./public/sitemap.xml");
 }
 
 generateSitemap();
 
-export {}; // 👈️ if you don't have anything else to export
+// export {}; // 👈️ if you don't have anything else to export
