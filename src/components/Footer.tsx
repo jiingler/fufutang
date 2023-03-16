@@ -1,8 +1,8 @@
 import logoWhiteV from "../assets/logo/Fufutang-logo-white-line-v.svg";
 import { Link } from "react-router-dom";
-import facebook from "../assets/logo/fb.png";
-import instagram from "../assets/logo/instagram.png";
-import line from "../assets/logo/line.png";
+import facebook from "../assets/logo/fb.webp";
+import instagram from "../assets/logo/instagram.webp";
+import line from "../assets/logo/line.webp";
 import { useEffect, useState } from "react";
 import { AppService } from "../services/app.service";
 
