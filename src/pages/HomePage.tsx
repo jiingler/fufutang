@@ -56,7 +56,7 @@ const HomePage = () => {
     <>
       <div className="home-bg">
         <div className="container home-bg-info">
-          <h2 className="home-title mb-2">歡迎來到福福堂中醫</h2>
+          <h2 className="home-title mb-2">歡迎來到福福堂中醫診所</h2>
           <p className="home-subtitle mb-4">
             以整體宏觀的視野看待人體，並重視醫病雙方協力合作
           </p>
