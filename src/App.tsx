@@ -2,6 +2,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.scss";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ArticlePage from "./pages/ArticlePage";
 import ClinicsPage from "./pages/ClinicsPage";
 import DoctorsPage from "./pages/DoctorsPage";
 import HomePage from "./pages/HomePage";
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/news" element={<NewsPage />}></Route>
             <Route path="/news/:id" element={<NewsDetailPage />}></Route>
+            <Route path="/articles" element={<ArticlePage />}></Route>
             <Route path="/doctors" element={<DoctorsPage />}></Route>
             <Route path="/clinics" element={<ClinicsPage />}></Route>
             <Route path="/services" element={<ServicesPage />}></Route>
