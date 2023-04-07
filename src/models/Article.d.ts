@@ -5,4 +5,5 @@ type Article = {
   url: string;
   metaType: string;
   description: string;
+  pubDate: string;
 };

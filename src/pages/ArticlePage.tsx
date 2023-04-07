@@ -21,9 +21,9 @@ const ArticlePage = () => {
   }, []);
   return (
     <div className="page ">
-      <PageTitle text="專題報導" />
+      <PageTitle text="健康專欄" />
       <div className="container">
-        <div className="row g-4 my-5">
+        <div className="row g-4 my-md-5 my-3">
           {articles &&
             articles.map((article, idx) => (
               <Article key={idx} article={article} />

@@ -10,8 +10,8 @@ const Header = () => {
   const [isShrunk, setShrunk] = useState(false);
   useEffect(() => {
     const handler = () => {
-      console.log(document.body.scrollTop);
-      console.log(document.documentElement.scrollTop);
+      // console.log(document.body.scrollTop);
+      // console.log(document.documentElement.scrollTop);
       // Check and update component here.
       setShrunk((isShrunk) => {
         if (
@@ -54,14 +54,14 @@ const Header = () => {
       <nav className={`py-2 w-100`}>
         <div className="wrap w-100 d-flex align-items-center">
           <div className="w-100 d-flex justify-content-between align-items-center pe-3">
-            <div className="logo d-flex align-items-center ms-lg-5 ms-0">
+            <div className="logo d-flex align-items-center ms-xl-5 ms-md-3 ms-0">
               <Link title="福福堂中醫診所 Fu Fu Tang | 高雄中醫" to="/">
                 <h1 className={`${!isShrunk ? "" : "smallScale"}`}>
                   福福堂中醫診所 Fu Fu Tang | 高雄中醫
                 </h1>
               </Link>
             </div>
-            <div className="d-flex me-lg-5 me-0">
+            <div className="d-flex me-xl-5 me-md-3 me-0">
               <Menu isShrunk={isShrunk} />
             </div>
           </div>

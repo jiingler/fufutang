@@ -22,6 +22,7 @@ const Menu: React.FC<MenuProps> = ({ isShrunk }) => {
     setShowMenu(false);
     const root = document.querySelector("#root") as HTMLDivElement;
     root.style.overflowY = showMenu ? "auto" : "hidden";
+    root.scrollTop = 0;
   };
 
   return (
@@ -36,7 +37,7 @@ const Menu: React.FC<MenuProps> = ({ isShrunk }) => {
           <Link to="/news">最新消息</Link>
         </li>
         <li>
-          <Link to="/articles">專題報導</Link>
+          <Link to="/articles">健康專欄</Link>
         </li>
         <li>
           <Link to="/doctors">醫師介紹</Link>
@@ -102,7 +103,7 @@ const Menu: React.FC<MenuProps> = ({ isShrunk }) => {
             <Link to="/news">最新消息</Link>
           </li>
           <li className="py-3" onClick={closePhoneMenu}>
-            <Link to="/articles">專題報導</Link>
+            <Link to="/articles">健康專欄</Link>
           </li>
           <li className="py-3" onClick={closePhoneMenu}>
             <Link to="/doctors">醫師介紹</Link>
