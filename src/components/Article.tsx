@@ -3,7 +3,6 @@ type ArticleProps = {
 };
 
 const Article: React.FC<ArticleProps> = ({ article }) => {
-  console.log(article);
   const pubDate = new Date(article?.pubDate);
   const pubDateY = pubDate.getFullYear();
   const pubDateM = pubDate.getMonth() + 1;

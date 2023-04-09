@@ -29,7 +29,7 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
         <div className="container">
           <div className="d-md-flex justify-content-center d-block mx-md-0 mx-3">
             <div className="info">
-              <h5 className="class">學經歷</h5>
+              <h4 className="class">學經歷</h4>
               <ul className="list">
                 {doctor?.experiences?.map((experience, idx) => (
                   <li className="item" key={idx}>
@@ -39,21 +39,25 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
               </ul>
             </div>
             <div className="info">
-              <h5 className="class">主治項目</h5>
+              <h4 className="class">主治項目</h4>
               <ul className="list">
                 {doctor?.expertises?.map((expertise, idx) => (
-                  <li className="item" key={idx}>
-                    {expertise}
+                  <li className="item mb-2" key={idx}>
+                    <h5 className="mb-1">{expertise.type}</h5>
+                    {expertise?.content && <p>{expertise.content}</p>}
                   </li>
                 ))}
               </ul>
             </div>
             <div className="info">
-              <h5 className="class">特別專長</h5>
+              <h4 className="class">特別門診（需預約）</h4>
               <ul className="list">
                 {doctor?.specialExpertises?.map((specialExpertise, idx) => (
-                  <li className="item" key={idx}>
-                    {specialExpertise}
+                  <li className="item mb-2" key={idx}>
+                    <h5 className="mb-1">{specialExpertise.type}</h5>
+                    {specialExpertise?.content && (
+                      <p>{specialExpertise.content}</p>
+                    )}
                   </li>
                 ))}
               </ul>
