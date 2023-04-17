@@ -52,7 +52,7 @@ const NewsDetailPage = () => {
         <div className="content p-md-5 p-3">
           {news?.image && (
             <div className="image-container">
-              <img src={news?.image} alt={news?.title} />
+              <img src={news?.image} alt={"福福堂公告：" + news?.title} />
             </div>
           )}
           <div className="paragraphs mt-md-5 mt-3">

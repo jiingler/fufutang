@@ -35,7 +35,11 @@ const ClinicSwitcher: React.FC<ClinicSwitcherProps> = ({
               key={clinic.id}
               onClick={() => setCurrentClinic(clinic)}
             >
-              <img className="logo me-3" src={logo} alt="logo" />
+              <img
+                className="logo me-3"
+                src={logo}
+                alt={clinic.name + " logo"}
+              />
               {clinic.name}
             </div>
           );

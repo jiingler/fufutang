@@ -28,7 +28,7 @@ const Footer = () => {
     <footer className="bg-primary-deep footer">
       <div className="container top-half d-md-flex align-items-center">
         <div className="logo">
-          <img src={logoWhiteV} alt="logo" />
+          <img src={logoWhiteV} alt={"福福堂logo"} />
         </div>
         <div className="links ms-md-3">
           <div className="d-lg-flex justify-content-around">
@@ -84,7 +84,7 @@ const Footer = () => {
                   className="me-3"
                   rel="noreferrer"
                 >
-                  <img src={facebook} alt="facebook" />
+                  <img src={facebook} alt="福福堂臉書連結" />
                 </a>
                 <a
                   href="https://www.instagram.com/fu.fu.tang/"
@@ -92,7 +92,7 @@ const Footer = () => {
                   className="me-3"
                   rel="noreferrer"
                 >
-                  <img src={instagram} alt="instagram" />
+                  <img src={instagram} alt="福福堂instagram連結" />
                 </a>
                 <a
                   href="https://liff.line.me/1645278921-kWRPP32q/?accountId=785mxvqt"
@@ -100,7 +100,7 @@ const Footer = () => {
                   className="me-3"
                   rel="noreferrer"
                 >
-                  <img src={line} alt="line" />
+                  <img src={line} alt="福福堂加line好友" />
                 </a>
               </div>
             </div>

@@ -95,7 +95,10 @@ const HomePage = () => {
           {services.map((service, index) => (
             <div className="service py-md-4 py-3 px-md-3 px-0" key={index}>
               <div className="imageContainer position-relative">
-                <img src={service.imageUrl} alt={service.name} />
+                <img
+                  src={service.imageUrl}
+                  alt={"福福堂服務項目：" + service.name}
+                />
                 <div className="imageOverlay position-absolute"></div>
                 <p className="imageText position-absolute">{service.name}</p>
               </div>
