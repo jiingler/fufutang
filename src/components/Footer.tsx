@@ -39,6 +39,9 @@ const Footer = () => {
                   <Link to="/news">最新消息</Link>
                 </li>
                 <li className="py-2">
+                  <Link to="/articles">健康專欄</Link>
+                </li>
+                <li className="py-2">
                   <Link to="/doctors">醫師介紹</Link>
                 </li>
                 <li className="py-2">
