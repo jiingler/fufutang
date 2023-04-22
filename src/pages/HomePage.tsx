@@ -18,7 +18,7 @@ const HomePage = () => {
     { name: "古典針灸", imageUrl: acupuncture },
     { name: "整體結構調理", imageUrl: message },
     { name: "運動醫學", imageUrl: exercise },
-    { name: "靈氣療癒", imageUrl: meditation },
+    // { name: "靈氣療癒", imageUrl: meditation },
   ];
 
   const [clinics, setClinics] = useState<Clinic[]>([]);
