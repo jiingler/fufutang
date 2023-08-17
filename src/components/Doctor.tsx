@@ -2,6 +2,7 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import MediumTitle from "./MediumTitle";
+import DoctorName from "./DoctorName";
 
 const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
   const navigate = useNavigate();
@@ -18,10 +19,10 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
                 <p key={idx}>{clinic.name}</p>
               ))}
             </div>
-            <h3 className="doctor-name mb-2">
-              {doctor?.name}{" "}
-              <span className="doctor-position">{doctor?.position}</span>
-            </h3>
+            <DoctorName
+              name={doctor?.name}
+              position={doctor?.position}
+            ></DoctorName>
           </div>
         </div>
       </div>

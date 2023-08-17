@@ -29,20 +29,6 @@
       }
     }
   }
-  &-name {
-    font-size: 2rem;
-    font-weight: bold;
-    @include sm {
-      font-size: 1.8rem;
-    }
-  }
-  &-position {
-    font-size: 1.5rem;
-    font-weight: normal;
-    @include sm {
-      font-size: 1.2rem;
-    }
-  }
   &-info {
     background-color: $fufu-primary;
     color: white;

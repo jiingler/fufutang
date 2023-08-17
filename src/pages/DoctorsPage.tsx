@@ -4,10 +4,13 @@ import ClinicSwitcher from "../components/ClinicSwitcher";
 import Doctor from "../components/Doctor";
 import PageTitle from "../components/PageTitle";
 import { AppService } from "../services/app.service";
+import DoctorList from "../components/DoctorList";
+import DoctorName from "../components/DoctorName";
 
 const DoctorsPage: React.FC<{}> = () => {
   // const [currentClinic, setCurrentClinic] = useState<Clinic>();
   const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [currentDoctor, setCurrectDoctor] = useState<Doctor>();
   // const [clinics, setClinics] = useState<Clinic[]>([]);
 
   const appService = new AppService();
@@ -24,6 +27,7 @@ const DoctorsPage: React.FC<{}> = () => {
     const fetchData = async () => {
       const doctors = await getAllDoctors();
       setDoctors([...doctors]);
+      setCurrectDoctor(doctors[0]);
       // const clinics = await getAllClinics();
       // setClinics([...clinics]);
       // setCurrentClinic(clinics[0]);
@@ -46,8 +50,29 @@ const DoctorsPage: React.FC<{}> = () => {
           </div>
         )}
       </div> */}
-      {doctors &&
-        doctors.map((doctor) => <Doctor key={doctor.id} doctor={doctor} />)}
+      <div className="doctor-list">
+        {currentDoctor &&
+          doctors &&
+          doctors.map((doctor) => {
+            return (
+              <button
+                className={`text-button doctor ${
+                  currentDoctor.id === doctor.id ? "active" : ""
+                }`}
+                onClick={() => setCurrectDoctor(doctor)}
+                key={doctor.id}
+              >
+                <DoctorName
+                  name={doctor?.name}
+                  position={doctor?.position}
+                ></DoctorName>
+              </button>
+            );
+          })}
+      </div>
+      {currentDoctor && (
+        <Doctor key={currentDoctor.id} doctor={currentDoctor} />
+      )}
     </div>
   );
 };

@@ -48,3 +48,9 @@
 .btn-wood {
   @include button($fufu-wood);
 }
+
+.text-button {
+  color: black;
+  background-color: transparent;
+  border: none;
+}
