@@ -14,6 +14,8 @@ type ClinicTimeData = {
   clinicTime: ClinicTimes[];
 };
 
+const DOCTOR_COLORS = ["#006897", "#f68f7b"];
+
 const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
   const navigate = useNavigate();
   const [clinicPeriod, setClinicPeriod] = useState<ClinicPeriod[]>([]);
@@ -64,24 +66,36 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                       <div className="work cell" key={idx}>
                         {clinicDoctorList &&
                           clinicDoctorList?.map((clinicDoctor, j) => (
-                            <a key={j} href={"/doctors"}>
-                              <p className="doctorName mb-2">
-                                {clinicDoctor?.doctorName}
-                              </p>
-                              <p className="clinicType">
-                                {clinicDoctor?.clinicType ===
-                                ClinicType.OwnExpense
-                                  ? `（${
-                                      ClinicTypeText[ClinicType.OwnExpense]
-                                    }）`
-                                  : clinicDoctor?.clinicType ===
+                            <>
+                              {clinicDoctor.clinicType !==
+                                ClinicType.OwnExpense && (
+                                <a key={j} href={"/doctors"}>
+                                  <p
+                                    className="doctorName mb-2"
+                                    style={{
+                                      color:
+                                        DOCTOR_COLORS[clinicDoctor.doctorId],
+                                    }}
+                                  >
+                                    {clinicDoctor?.doctorName}
+                                  </p>
+                                  <p className="clinicType">
+                                    {clinicDoctor?.clinicType ===
                                     ClinicType.TimeAdjust
-                                  ? `（${
-                                      ClinicTypeText[ClinicType.TimeAdjust]
-                                    }）`
-                                  : ""}
-                              </p>
-                            </a>
+                                      ? `（${
+                                          ClinicTypeText[ClinicType.TimeAdjust]
+                                        }）`
+                                      : ""}
+                                  </p>
+                                </a>
+                              )}
+                              {clinicDoctor.clinicType ===
+                                ClinicType.OwnExpense && (
+                                <p className="clinicType ownExpense mb-2">
+                                  {ClinicTypeText[ClinicType.OwnExpense]}
+                                </p>
+                              )}
+                            </>
                           ))}
                       </div>
                     ) : (

@@ -37,6 +37,9 @@
         background-color: #ebeff0;
         &.work {
           color: $fufu-primary-deep;
+          > a {
+            text-decoration: none !important;
+          }
           .doctorName {
             font-weight: bold;
             color: $fufu-primary-deep;
@@ -45,6 +48,11 @@
             font-weight: normal;
             font-size: 0.7rem;
             color: $fufu-primary-deep;
+            &.ownExpense {
+              font-size: 1rem;
+              color: black;
+              font-weight: bold;
+            }
           }
         }
         &.break {
