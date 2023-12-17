@@ -9,10 +9,17 @@
     background-attachment: fixed; // 滾動視差
     @include xl {
       height: 600px;
+      background-image: url("../../assets/images/fufutang_xl.webp");
     }
     @include md {
       background-attachment: scroll;
       height: 300px;
+      background-image: url("../../assets/images/fufutang_md.webp");
+    }
+    @include md {
+      background-attachment: scroll;
+      height: 300px;
+      background-image: url("../../assets/images/fufutang_sm.webp");
     }
     position: relative;
   }
@@ -52,7 +59,7 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  opacity: 0.2;
+  opacity: 0.3;
   z-index: 2;
 }
 
@@ -78,7 +85,9 @@
         }
       }
       img {
-        transition: transform 1s, filter 2s ease-in-out;
+        transition:
+          transform 1s,
+          filter 2s ease-in-out;
         filter: blur(1px);
         transform: scale(1.2);
         width: 100%;
@@ -98,7 +107,7 @@
         bottom: 0;
       }
       .imageText {
-        font-weight: normal;
+        font-weight: 500;
         top: 50%;
         left: 0;
         right: 0;
@@ -107,8 +116,7 @@
     }
     p {
       text-align: center;
-      font-size: 1.25rem;
-      font-weight: normal;
+      font-size: 1.5rem;
     }
   }
 }

@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
-import chineseMedicine from "../assets/images/chinese-medicine.webp";
+import chineseMedicine from "../assets/images/cm.webp";
 import message from "../assets/images/massage.webp";
 import acupuncture from "../assets/images/acupuncture.webp";
 import exercise from "../assets/images/exercise.webp";
-import meditation from "../assets/images/meditation.webp";
 import MediumTitle from "../components/MediumTitle";
 import News from "../components/News";
 import ClinicTime from "../components/ClinicTime";

@@ -1,11 +1,10 @@
 .pageBg {
   width: 100%;
   height: 250px;
-  background-image: url("../../assets/images/fufutang.webp");
+  background-image: url("../../assets/images/fufutang-page.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; // 滾動視差
   position: relative;
   .pageTitle {
     position: absolute;
@@ -16,19 +15,26 @@
     font-size: 3rem;
     color: white;
     font-weight: bold;
+    // 文字邊框
+    // text-shadow:
+    //   -1px -1px 0 #000000,
+    //   1px -1px 0 #000000,
+    //   -1px 1px 0 #000,
+    //   1px 1px 0 #000;
+  }
+  @include xl {
+    background-image: url("../../assets/images/fufutang-page_xl.webp");
   }
   @include md {
-    background-size: contain;
+    background-image: url("../../assets/images/fufutang-page_md.webp");
     height: 200px;
-    background-position-y: 10px;
     .pageTitle {
       font-size: 2rem;
     }
   }
   @include sm {
-    background-size: contain;
+    background-image: url("../../assets/images/fufutang-page_sm.webp");
     height: 140px;
-    background-position-y: 60px;
   }
 
   .pageBgOverlay {
@@ -38,7 +44,7 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-    opacity: 0.2;
+    opacity: 0.4;
     z-index: 2;
   }
 }
