@@ -31,7 +31,7 @@ body {
     padding-bottom: $footer-lg-height;
   }
   @include md {
-    padding-top: 76px; // phone-menu height
+    padding-top: 83px; // phone-menu height
     padding-bottom: $footer-md-height;
   }
 }
