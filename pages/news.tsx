@@ -3,7 +3,6 @@ import PageTitle from "../components/PageTitle";
 import { AppService } from "@/utils/app.service";
 
 const NewsPage: React.FC<{ newsList: News[] }> = ({ newsList }) => {
-  console.log(newsList);
   return (
     <div className="page">
       <PageTitle text="最新消息" />
