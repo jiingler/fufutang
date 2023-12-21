@@ -1,0 +1,18 @@
+@import "../mixin/break-point";
+@import "../variables";
+
+.doctorList {
+  background-color: $fufu-wood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .textButton.doctor {
+    color: white;
+    padding: 16px 32px;
+    &.active {
+      color: $fufu-primary;
+      border-bottom: 3px solid $fufu-primary;
+    }
+  }
+}

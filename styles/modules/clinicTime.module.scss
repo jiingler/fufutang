@@ -1,0 +1,84 @@
+@import "../mixin/break-point";
+@import "../variables";
+
+.clinicTime {
+  .clinicTimeTable {
+    border: none;
+    width: 100%;
+
+    .cell {
+      flex-grow: 1;
+      text-align: center;
+      vertical-align: middle;
+      padding: 16px 8px;
+      border-collapse: collapse;
+      max-width: calc((100% - 100px) / 6);
+      border-right: 3px solid white;
+      border-bottom: 3px solid white;
+      &:first-child {
+        flex-grow: 0;
+        flex-basis: 100px;
+        max-width: 100px;
+        border-left: 3px solid white;
+      }
+      &:not(:first-child) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .tableHeader {
+      color: #fff;
+      .cell {
+        background-color: $fufu-primary;
+      }
+    }
+
+    .tableBody {
+      background-color: #fff;
+      .cell {
+        background-color: #ebeff0;
+        &.work {
+          color: $fufu-primary-deep;
+          > a {
+            text-decoration: none !important;
+          }
+          .doctorName {
+            font-weight: bold;
+            color: $fufu-primary-deep;
+          }
+          .clinicType {
+            font-weight: normal;
+            font-size: 0.7rem;
+            color: $fufu-primary-deep;
+            &.ownExpense {
+              font-size: 1rem;
+              color: black;
+              font-weight: bold;
+            }
+          }
+        }
+        &.break {
+          color: $gray-400;
+        }
+        p.time {
+          font-weight: normal;
+          font-size: 0.8rem;
+          &:nth-child(3) {
+            font-size: 0.5rem;
+          }
+        }
+      }
+    }
+    @include sm {
+      .cell {
+        min-width: 110px;
+        padding: 8px 2px;
+      }
+    }
+  }
+  .remarks {
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+}

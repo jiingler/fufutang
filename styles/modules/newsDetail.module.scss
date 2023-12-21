@@ -1,0 +1,59 @@
+@import "../mixin/break-point";
+@import "../variables";
+
+.newsDetail {
+  .titleField {
+    border-bottom: 2px solid $gray-200;
+    padding: 1rem 0;
+  }
+  .title {
+    font-size: 2rem;
+    @include sm {
+      font-size: 1.5rem;
+    }
+  }
+  .regDate {
+    font-weight: lighter;
+    @include sm {
+      font-size: 0.8rem;
+    }
+  }
+  .content {
+    width: 100%;
+  }
+  .imageContainer {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    img {
+      object-fit: contain;
+    }
+    @include sm {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .paragraphs {
+    .paragraph {
+      white-space: pre-line;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      @include sm {
+        font-size: 1rem;
+      }
+    }
+  }
+  .share {
+    .fb,
+    .line {
+      display: block;
+      height: 45px;
+      width: 45px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

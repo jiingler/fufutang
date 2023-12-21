@@ -1,0 +1,64 @@
+@import "./reset";
+@import "./variables";
+@import "./mixin/font-mixin";
+@import "./mixin/break-point";
+@import "./_custom";
+@import "./basic/bg";
+@import "./text";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+// @import-normalize;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  p {
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: unset;
+  color: black;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.App {
+  overflow-x: hidden;
+  height: unset;
+  min-height: 100%;
+}
+
+body {
+  // background-color: $fufu-quaternary;
+}
+
+.body {
+  padding-bottom: $footer-height;
+  @include lg {
+    padding-bottom: $footer-lg-height;
+  }
+  @include md {
+    padding-top: 83px; // phone-menu height
+    padding-bottom: $footer-md-height;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+p {
+  margin: 0;
+}

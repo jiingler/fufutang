@@ -1,0 +1,59 @@
+@import "../mixin/break-point";
+@import "../variables";
+
+@mixin button($color) {
+  background-color: $color;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  .icon {
+    font-size: 1.5rem;
+    margin-right: 0.25rem;
+  }
+  @include md {
+    padding: 8px 16px;
+  }
+  @include sm {
+    font-size: 0.9rem;
+  }
+  &:hover {
+    background-color: darken($color, 8%);
+  }
+  &.outlined {
+    background-color: transparent;
+    border: 2px solid $color;
+    color: $color;
+    &:hover {
+      background-color: #0000000a;
+    }
+  }
+}
+
+.btn_primary {
+  @include button($fufu-primary);
+}
+
+.btn_light {
+  @include button($fufu-primary-light);
+}
+
+.btn_deep {
+  @include button($fufu-primary-deep);
+}
+
+.btn_wood {
+  @include button($fufu-wood);
+}
+
+.text-button {
+  color: black;
+  background-color: transparent;
+  border: none;
+}
