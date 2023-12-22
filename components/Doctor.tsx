@@ -11,8 +11,8 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
   return (
     <div className={styles.doctor}>
       <div className="container block pb-0">
-        <div className="d-md-flex justify-content-center align-items-center d-block mb-md-0 mb-4">
-          <div className={`${styles.profileImage} mb-md-0 mb-3`}>
+        <div className="d-flex justify-content-center align-items-center d-block mb-0">
+          <div className={`${styles.profileImage} mb-0`}>
             <Image
               src={doctor?.image}
               alt={doctor?.name + " 醫師形象照"}
@@ -20,8 +20,8 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
               height={500}
             />
           </div>
-          <div className="d-md-block d-flex flex-row-reverse justify-content-between align-items-end mx-md-0 mx-3">
-            <div className={`${styles.clinic} d-flex mb-2`}>
+          <div className={`${styles.title} d-block`}>
+            <div className={`${styles.clinic} d-flex mb-md-2 mb-0`}>
               {doctor?.clinics?.map((clinic, idx) => (
                 <p key={idx}>{clinic.name}</p>
               ))}
