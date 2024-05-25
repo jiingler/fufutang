@@ -23,6 +23,7 @@
       }
       &:not(:first-child) {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
@@ -51,11 +52,10 @@
             font-weight: normal;
             font-size: 0.7rem;
             color: $fufu-primary-deep;
-            &.ownExpense {
-              font-size: 1rem;
-              color: black;
-              font-weight: bold;
-            }
+          }
+          .ownExpense {
+            color: gray;
+            font-size: 0.8rem;
           }
         }
         &.break {
@@ -68,6 +68,12 @@
             font-size: 0.5rem;
           }
         }
+      }
+    }
+    @include md {
+      .cell {
+        min-width: 120px;
+        padding: 8px 2px;
       }
     }
     @include sm {

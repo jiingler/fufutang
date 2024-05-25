@@ -7,6 +7,9 @@
 }
 
 .table-container {
+  @include md {
+    overflow-x: auto;
+  }
   @include sm {
     overflow-x: auto;
   }

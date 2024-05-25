@@ -13,6 +13,9 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
       <div className="container block">
         <MediumTitle text="門診時間" isShowLogo={true} />
         <ClinicTime clinicId={clinic.id} />
+        <p className="mt-1" style={{ textAlign: "center" }}>
+          （自2024/06/01起適用此門診時間）
+        </p>
       </div>
       {!!clinic?.philosophy && clinic.philosophy.length > 0 && (
         <div className={`bg-wood block`}>

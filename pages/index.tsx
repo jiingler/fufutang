@@ -93,6 +93,9 @@ export default function Home() {
       <div className="container block">
         <MediumTitle text="門診時間" isShowLogo={true} />
         <HomeClinicTime />
+        <p className="mt-1" style={{ textAlign: "center" }}>
+          （自2024/06/01起適用此門診時間）
+        </p>
       </div>
     </>
   );

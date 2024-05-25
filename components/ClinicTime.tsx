@@ -15,7 +15,7 @@ type ClinicTimeData = {
   clinicTime: ClinicTimes[];
 };
 
-const DOCTOR_COLORS = ["#006897", "#f68f7b"];
+const DOCTOR_COLORS = ["#006897", "#f68f7b", "#679f99"];
 
 const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
   const [clinicPeriod, setClinicPeriod] = useState<ClinicPeriod[]>([]);
@@ -69,37 +69,48 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                       >
                         {clinicDoctorList &&
                           clinicDoctorList?.map((clinicDoctor, j) => (
-                            <div key={j}>
-                              {clinicDoctor.clinicType !==
-                                ClinicType.OwnExpense && (
-                                <a href={"/doctors"}>
-                                  <p
-                                    className={`${styles.doctorName} mb-2`}
-                                    style={{
-                                      color:
-                                        DOCTOR_COLORS[clinicDoctor.doctorId],
-                                    }}
-                                  >
-                                    {clinicDoctor?.doctorName}
-                                  </p>
-                                  <p className={styles.clinicType}>
-                                    {clinicDoctor?.clinicType ===
-                                    ClinicType.TimeAdjust
-                                      ? `（${
-                                          ClinicTypeText[ClinicType.TimeAdjust]
-                                        }）`
-                                      : ""}
-                                  </p>
-                                </a>
-                              )}
-                              {clinicDoctor.clinicType ===
-                                ClinicType.OwnExpense && (
+                            <div
+                              key={j}
+                              className={
+                                j !== clinicDoctorList.length - 1 ? "mb-1" : ""
+                              }
+                            >
+                              <a href={"/doctors"}>
                                 <p
-                                  className={`${styles.clinicType} ${styles.ownExpense} mb-2`}
+                                  className={`${styles.doctorName} mb-1`}
+                                  style={{
+                                    color: DOCTOR_COLORS[clinicDoctor.doctorId],
+                                  }}
                                 >
-                                  {ClinicTypeText[ClinicType.OwnExpense]}
+                                  {clinicDoctor?.clinicType !==
+                                  ClinicType.OwnExpense
+                                    ? clinicDoctor?.doctorName
+                                    : ""}
+                                  <span className={styles.ownExpense}>
+                                    {clinicDoctor?.clinicType ===
+                                    ClinicType.OwnExpense
+                                      ? `${clinicDoctor?.doctorName}(${
+                                          ClinicTypeText[
+                                            clinicDoctor?.clinicType
+                                          ]
+                                        })`
+                                      : ""}
+                                  </span>
                                 </p>
-                              )}
+                                <p
+                                  className={styles.clinicType}
+                                  style={{
+                                    color: DOCTOR_COLORS[clinicDoctor.doctorId],
+                                  }}
+                                >
+                                  {clinicDoctor?.clinicType ===
+                                  ClinicType.TimeAdjust
+                                    ? `（${
+                                        ClinicTypeText[clinicDoctor?.clinicType]
+                                      }）`
+                                    : ""}
+                                </p>
+                              </a>
                             </div>
                           ))}
                       </div>
