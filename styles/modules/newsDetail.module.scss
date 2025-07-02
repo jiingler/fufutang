@@ -8,6 +8,8 @@
   }
   .title {
     font-size: 2rem;
+    display: flex;
+    align-items: center;
     @include sm {
       font-size: 1.5rem;
     }

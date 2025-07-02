@@ -41,6 +41,8 @@
 }
 .noticeTitle {
   font-weight: normal;
+  display: flex;
+  align-items: center;
 }
 .noticeSubtitle {
   color: $gray-500;
