@@ -61,6 +61,10 @@ const Clinic: React.FC<ClinicProps> = ({ clinic }) => {
                   </span>
                 </p>
                 <p className="mb-md-3 mb-2 ps-3">
+                  捷運 -
+                  <span className="fw-300"> {clinic.transportation?.mrt}</span>
+                </p>
+                <p className="mb-md-3 mb-2 ps-3">
                   公車 -
                   <span className="fw-300"> {clinic.transportation?.bus}</span>
                 </p>

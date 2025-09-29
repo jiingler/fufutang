@@ -1,4 +1,5 @@
 type Transportation = {
   train?: string;
-  bus?: string
-}
+  bus?: string;
+  mrt?: string;
+};
