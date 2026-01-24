@@ -15,7 +15,7 @@ type ClinicTimeData = {
   clinicTime: ClinicTimes[];
 };
 
-const DOCTOR_COLORS = ["#006897", "#f68f7b", "#679f99"];
+const DOCTOR_COLORS = ["#006897", "#f68f7b", "#679f99", "#a07baf"];
 
 const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
   const [clinicPeriod, setClinicPeriod] = useState<ClinicPeriod[]>([]);
@@ -83,17 +83,16 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                                   }}
                                 >
                                   {clinicDoctor?.clinicType !==
-                                  ClinicType.OwnExpense
+                                    ClinicType.OwnExpense
                                     ? clinicDoctor?.doctorName
                                     : ""}
                                   <span className={styles.ownExpense}>
                                     {clinicDoctor?.clinicType ===
-                                    ClinicType.OwnExpense
-                                      ? `${clinicDoctor?.doctorName}(${
-                                          ClinicTypeText[
-                                            clinicDoctor?.clinicType
-                                          ]
-                                        })`
+                                      ClinicType.OwnExpense
+                                      ? `${clinicDoctor?.doctorName}(${ClinicTypeText[
+                                      clinicDoctor?.clinicType
+                                      ]
+                                      })`
                                       : ""}
                                   </span>
                                 </p>
@@ -104,10 +103,9 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                                   }}
                                 >
                                   {clinicDoctor?.clinicType ===
-                                  ClinicType.TimeAdjust
-                                    ? `（${
-                                        ClinicTypeText[clinicDoctor?.clinicType]
-                                      }）`
+                                    ClinicType.TimeAdjust
+                                    ? `（${ClinicTypeText[clinicDoctor?.clinicType]
+                                    }）`
                                     : ""}
                                 </p>
                               </a>

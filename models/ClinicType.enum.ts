@@ -4,4 +4,4 @@ export enum ClinicType {
   TimeAdjust,
 }
 
-export const ClinicTypeText = ["", "特約門診", "看診時間至17:10"];
+export const ClinicTypeText = ["", "特約門診", "看診時間至17:10", "一般、特約門診"];
