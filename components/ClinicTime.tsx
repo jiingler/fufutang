@@ -102,8 +102,8 @@ const ClinicTime: React.FC<ClinicTimeProps> = ({ clinicId }) => {
                                     color: DOCTOR_COLORS[clinicDoctor.doctorId],
                                   }}
                                 >
-                                  {clinicDoctor?.clinicType ===
-                                    ClinicType.TimeAdjust
+                                  {clinicDoctor?.clinicType === ClinicType.TimeAdjust ||
+                                    clinicDoctor?.clinicType === ClinicType.GeneralAndOwnExpense
                                     ? `（${ClinicTypeText[clinicDoctor?.clinicType]
                                     }）`
                                     : ""}
