@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "rebuild": "npx next build"
   },
   "dependencies": {
     "bootstrap": "^5.0.2",

@@ -14,7 +14,7 @@ const Doctor: React.FC<{ doctor: Doctor }> = ({ doctor }) => {
         <div className="d-flex justify-content-center align-items-center d-block mb-0">
           <div className={`${styles.profileImage} mb-0`}>
             <Image
-              src={doctor?.image}
+              src={`/assets/images/doctors/${doctor?.id}.png`}
               alt={doctor?.name + " 醫師形象照"}
               width={470}
               height={500}
